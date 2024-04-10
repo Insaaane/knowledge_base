@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./reset.css">
+	<link rel="stylesheet" href="./global-styles.css">
+	<link rel="stylesheet" href="./login-page.css">
+	<title>Авторизация</title>
+</head>
+
+<body>
+	<!-- Боковое меню - начало -->
+	<div class="sidenav">
+		<img class="sidenav__logo" src="./img/logo-sidenav.svg" alt="Логотип базы знаний 'IKnow'">
+
+		<ul class="sidenav__menu">
+			<li class="sidenav__menu-item">
+				<a href="#" class="sidenav__link">Главная</a>
+			</li>
+			<li class="sidenav__menu-item">
+				<a href="#" class="sidenav__link">Конструктор моделей</a>
+			</li>
+			<li class="sidenav__menu-item">
+				<a href="#" class="sidenav__link">Конструктор формул</a>
+			</li>
+		</ul>
+
+		<div class="sidenav__account">
+			<img class="sidenav__account-icon" src="./img/account-icon.svg" alt="Вход в аккаунт">
+			<div class="sidenav__account-btn_wrap">
+				<a href="#" class="sidenav__account-btn">Войти в систему</a>
+			</div>
+		</div>
+	</div>
+	<!-- Боковое меню - конец -->
+
+	<!-- Основная часть -->
+	<main class="main">
+		<div class="wrapper main__wrapper">
+			<img class="main__logo" src="./img/full-logo.svg" alt="Логотип базы знаний 'IKnow'">
+
+			<form class="main__login-form" action="http://127.0.0.1:8000/login/" method="post">
+				<input class="main__login-input" type="text" id="username" name="username" placeholder="Введите email">
+				<input class="main__login-input" type="password" id="password" name="password" placeholder="Введите пароль">
+				<button class="main__login-btn" type="submit">Войти</button>
+			</form>
+		</div>
+	</main>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'Grtsk Exa';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./fonts/GrtskExa-Regular.woff2') format('woff2');
+}
+
+body {
+	font-family: 'Grtsk Exa';
+	font-style: normal;
+	font-size: 14px;
+	font-weight: 400;
+	color: #14191A;
+	line-height: 20px;
+}
+
+html {
+	background-image: url(./img/bg.svg);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}

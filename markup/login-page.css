@@ -1,0 +1,99 @@
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Боковое меню - начало */
+
+.sidenav {
+  background-color: #F6F6F4;
+  width: 191px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 28px 16px 48px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav__logo {
+  width: 103px;
+  height: 65px;
+  margin-left: 14px;
+}
+
+.sidenav__menu {
+  padding-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidenav__account {
+  margin-top: auto;
+  text-align: center;
+}
+
+.sidenav__account-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.sidenav__account-btn_wrap {
+  margin-top: 12px;
+}
+
+/* Боковое меню - конец */
+
+
+/* Основаня часть - начало */
+
+.main {
+  margin-left: 191px;
+}
+
+.main__wrapper {
+  text-align: center;
+  padding-right: 40px;
+  margin-top: 252px;
+}
+
+.main__logo {
+  width: 313px;
+  height: 64px;
+}
+
+.main__login-form {
+  padding-top: 26px;
+  font-size: 16px;
+  margin: 0 auto;
+
+  display: flex;
+  max-width: 409px;
+  gap: 12px;
+  flex-direction: column;
+  
+}
+
+.main__login-input {
+  padding: 14px 32px 14px 32px;
+  border-radius: 10px;
+  background-color: #F6F6F6;
+}
+
+.main__login-input::placeholder {
+  color: #14191A;
+}
+
+.main__login-btn {
+  max-width: 116px;
+  background-color: #D9D9D9;
+  border-radius: 10px;
+  line-height: 32px;
+  padding: 0 35px;
+
+  margin: 0 auto;
+}
