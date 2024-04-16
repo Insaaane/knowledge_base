@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./reset.css">
 	<link rel="stylesheet" href="./global-styles.css">
-	<link rel="stylesheet" href="./login-page.css">
+	<link rel="stylesheet" href="./main.css">
 	<title>Авторизация</title>
 </head>
 
@@ -37,14 +37,14 @@
 	<!-- Боковое меню - конец -->
 
 	<!-- Основная часть -->
-	<main class="main">
-		<div class="wrapper main__wrapper">
-			<img class="main__logo" src="./img/full-logo.svg" alt="Логотип базы знаний 'IKnow'">
+	<main>
+		<div class="entry">
+			<img class="entry__logo" src="./img/full-logo.svg" alt="Логотип базы знаний 'IKnow'">
 
-			<form class="main__login-form" action="http://127.0.0.1:8000/login/" method="post">
-				<input class="main__login-input" type="text" id="username" name="username" placeholder="Введите email">
-				<input class="main__login-input" type="password" id="password" name="password" placeholder="Введите пароль">
-				<button class="main__login-btn" type="submit">Войти</button>
+			<form class="entry__login-form" action="http://127.0.0.1:8000/login/" method="post">
+				<input class="entry__login-input" type="text" id="username" name="username" placeholder="Введите email" autocomplete="off">
+				<input class="entry__login-input" type="password" id="password" name="password" placeholder="Введите пароль">
+				<button class="entry__login-btn" type="submit">Войти</button>
 			</form>
 		</div>
 	</main>

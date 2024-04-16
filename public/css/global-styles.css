@@ -2,7 +2,7 @@
 	font-family: 'Grtsk Exa';
 	font-style: normal;
 	font-weight: 400;
-	src: url('./fonts/GrtskExa-Regular.woff2') format('woff2');
+	src: url('../fonts/GrtskExa-Regular.woff2') format('woff2');
 }
 
 body {
@@ -15,11 +15,7 @@ body {
 }
 
 html {
-	background-image: url(./img/bg.svg);
+	background-image: url('../img/bg.svg');
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-}
-
-main {
-  margin-left: 191px;
 }

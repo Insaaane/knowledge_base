@@ -1,6 +1,7 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.js",
@@ -41,8 +42,16 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"],
+        loader: "file-loader",
+        options: {
+          name: 'img/[name].[ext]',
+        }
       },
     ],
+  },
+  optimization: {
+    minimizer: [new TerserPlugin({
+      extractComments: false,
+    })],
   },
 };

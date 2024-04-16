@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./reset.css">
+	<link rel="stylesheet" href="./global-styles.css">
+	<link rel="stylesheet" href="./main.css">
+	<title>Главная</title>
+</head>
+
+<body>
+	<!-- Боковое меню - начало -->
+	<div class="sidenav">
+		<img class="sidenav__logo" src="./img/logo-sidenav.svg" alt="Логотип базы знаний 'IKnow'">
+
+		<ul class="sidenav__menu">
+			<li class="sidenav__menu-item">
+				<a href="#" class="sidenav__link">Главная</a>
+			</li>
+			<li class="sidenav__menu-item">
+				<a href="#" class="sidenav__link">Конструктор моделей</a>
+			</li>
+			<li class="sidenav__menu-item">
+				<a href="#" class="sidenav__link">Конструктор формул</a>
+			</li>
+		</ul>
+
+		<div class="sidenav__account">
+			<img class="sidenav__account-icon" src="./img/account-icon.svg" alt="Вход в аккаунт">
+			<div class="sidenav__account-btn_wrap">
+				<a href="#" class="sidenav__account-btn">Войти в систему</a>
+			</div>
+		</div>
+	</div>
+	<!-- Боковое меню - конец -->
+
+	<!-- Основная часть -->
+	<main>
+		<div class="main">
+			<h1 class="main__title">Документы</h1>
+			<input class="main__search" type="text" placeholder="Поиск">
+
+			<div class="main__cards">
+				<div class="main__card">
+					<img class="main__card-img" src="./img/accounting-img.png" alt="Нормативные документы">
+					<h2 class="main__card-title">Нормативные документы</h2>
+				</div>
+
+				<div class="main__card">
+					<img class="main__card-img" src="./img/accounting-img.png" alt="Нормативные документы">
+					<h2 class="main__card-title">Информация о сотрудниках</h2>
+				</div>
+				
+				<div class="main__card">
+					<img class="main__card-img" src="./img/accounting-img.png" alt="Нормативные документы">
+					<h2 class="main__card-title">Бухгалтерия</h2>
+				</div>
+
+				<div class="main__card">
+					<img class="main__card-img" src="./img/accounting-img.png" alt="Нормативные документы">
+					<h2 class="main__card-title">Проектная деятельность</h2>
+				</div>
+
+				<div class="main__card">
+					<img class="main__card-img" src="./img/accounting-img.png" alt="Нормативные документы">
+					<h2 class="main__card-title">Коммерческие документы</h2>
+				</div>
+				
+				<div class="main__card">
+					<img class="main__card-img" src="./img/accounting-img.png" alt="Нормативные документы">
+					<h2 class="main__card-title">Организационно-правовые документы</h2>
+				</div>
+
+			</div>
+
+			<div class="main__deleted-wrap">
+				<button class="main__deleted">
+					<span class="main__deleted-icon">Удаленные документы</span>
+				</button>
+			</div>
+		</div>
+	</main>
+
+</body>
+
+</html>
