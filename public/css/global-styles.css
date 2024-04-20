@@ -8,14 +8,64 @@
 body {
 	font-family: 'Grtsk Exa';
 	font-style: normal;
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: 400;
 	color: #14191A;
 	line-height: 20px;
 }
 
 html {
-	background-image: url('../img/bg.svg');
+	background-image: url('../img/bg.png');
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 }
+
+main {
+  margin-left: 255px;
+}
+
+
+/* Боковое меню - начало */
+
+.sidenav {
+  background-color: #F6F6F4;
+  width: 255px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 38px 33px 69px 21px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav__logo {
+  width: 134px;
+  height: 85px;
+  margin-left: 23px;
+}
+
+.sidenav__menu {
+  padding-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidenav__account {
+  margin-top: auto;
+  text-align: center;
+}
+
+.sidenav__account-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.sidenav__account-btn_wrap {
+  margin-top: 12px;
+}
+
+/* Боковое меню - конец */

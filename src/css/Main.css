@@ -1,0 +1,78 @@
+.main {
+  padding: 48px 70px 66px 63px;
+}
+
+.main__search {
+  font-size: 16px;
+  line-height: 32px;
+  padding-left: 32px;
+  margin-bottom: 24px;
+  border-bottom: #14191A 2px solid;
+  width: 277px;
+
+  /* background: url(./img/search-icon.svg) no-repeat 8px; */
+}
+
+.main__search::placeholder {
+  color: #14191A;
+}
+
+.main__title {
+  font-size: 56px;
+  line-height: 32px;
+  margin-bottom: 28px;
+}
+
+.main__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  justify-content: center;
+
+  max-width: 1116px; /* мб убрать в будущем */
+
+  margin: 0 auto;
+  margin-bottom: 26px;
+}
+
+.main__card {
+  border-radius: 10px;
+  position: relative;
+  max-width: 348px;
+  height: 226px;
+  box-shadow: 0px 2px 16px 0px rgba(20, 25, 26, 0.08);
+  cursor: pointer;
+}
+
+.main__card-title {
+  position: absolute;
+  left: 24px;
+  bottom: 16px;
+
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFF;
+
+  max-width: 235px;
+}
+
+.main__deleted-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main__deleted {
+  border-radius: 10px;
+  background: #D1CCC7;
+
+  line-height: 32px;
+  font-size: 24px;
+  color: #FFF;
+  padding: 18px 35px;
+}
+
+.main__deleted-icon {
+  /* background: url(./img/delete-icon.svg) no-repeat left top 2px; */
+  padding-left: 32px;
+}
