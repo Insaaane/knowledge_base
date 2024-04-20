@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/css/reset.css">
+  <link rel="stylesheet" href="../public/css/global-styles.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>Статья</title>
+</head>
+
+<body>
+  <!-- Боковое меню - начало -->
+  <div class="sidenav">
+    <img class="sidenav__logo" src="./img/logo-sidenav.svg" alt="Логотип базы знаний 'IKnow'">
+
+    <ul class="sidenav__menu">
+      <li class="sidenav__menu-item">
+        <a href="#" class="sidenav__link">Главная</a>
+      </li>
+      <li class="sidenav__menu-item">
+        <a href="#" class="sidenav__link">Конструктор моделей</a>
+      </li>
+      <li class="sidenav__menu-item">
+        <a href="#" class="sidenav__link">Конструктор формул</a>
+      </li>
+    </ul>
+
+    <div class="sidenav__account">
+      <img class="sidenav__account-icon" src="./img/account-icon.svg" alt="Вход в аккаунт">
+      <div class="sidenav__account-btn_wrap">
+        <a href="#" class="sidenav__account-btn">Войти в систему</a>
+      </div>
+    </div>
+  </div>
+  <!-- Боковое меню - конец -->
+
+  <!-- Основная часть -->
+  <main>
+    <div class="article">
+      <h1 class="article__title">Название документа</h1>
+
+      <div class="article__info_wrap">
+        <div class="article__info">
+          <p class="article__info_label">Текст: <span class="article__label_text">Emma Shifter</span></p>
+          <p class="article__info_label">Дата: <span class="article__label_text">21 декабря 2023</span></p>
+        </div>
+        
+        <button class="article__versions-btn">история версий</button>
+      </div>
+
+      <textarea class="article__text" name="" id="" cols="" rows="">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus ipsum sit amet iaculis mollis. Suspendisse lacinia tincidunt enim eu finibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut fringilla ligula ligula, et tempor odio aliquam eu.
+Nam ut augue nunc. Nunc et enim finibus, semper dolor id, tincidunt magna. Nam blandit gravida velit sed posuere. 
+Donec sem mi, maximus non turpis ullamcorper, accumsan mollis enim. 
+Maecenas justo est, mattis id sagittis et, elementum vitae purus. Suspendisse sit amet volutpat orci. 
+Nullam suscipit orci ac ipsum tincidunt pretium. Vestibulum vestibulum et augue non suscipit. 
+Phasellus vel dapibus sapien, non scelerisque dolor. Donec dictum nunc dolor, vitae iaculis arcu interdum vel.
+Sed ut volutpat diam, ut finibus erat. Suspendisse et vulputate enim. Nulla fringilla dolor vitae suscipit pellentesque. Sed a faucibus ante. Phasellus condimentum arcu commodo nisl tincidunt, a luctus magna placerat. Nullam ut lectus nec urna finibus consectetur ut et tellus. Suspendisse sit amet porta lorem. Sed imperdiet sodales ligula quis semper. In hac habitasse platea dictumst. Praesent eros libero, molestie in nisl nec, semper mollis tortor. Etiam eget maximus dui, eget finibus neque.
+      </textarea>
+
+      <p class="article__info_label">Документ: <a href="#" class="article__label_text">*ссылка на документ*</a></p>
+
+      <div class="article__comments">
+        <h2 class="article__comments_title">Комментарии</h2>
+
+        <textarea class="article__comment_input" name="" id="" cols="" rows="" placeholder="Напишите тут"></textarea>
+        
+        <ul class="article__comments_list">
+  
+          <li class="article__comment">
+            <img class="article__comment_logo" src="./img/avatar-circle.png" alt="Аватар пользователя">
+            <div class="article__comment_info">
+              <span class="article__comment_about">Emma Shifter</span>
+              <span class="article__comment_about">8 месяцев назад</span>
+              <p class="article__comment_text">
+                Sed ut volutpat diam, ut finibus erat. Suspendisse et vulputate enim. Nulla fringilla dolor vitae suscipit pellentesque. <br> 
+                Sed a faucibus ante. Phasellus condimentum arcu commodo nisl tincidunt, a luctus magna placerat.
+              </p>
+            </div>
+          </li>
+  
+          <li class="article__comment">
+            <img class="article__comment_logo" src="./img/avatar-circle.png" alt="Аватар пользователя">
+            <div class="article__comment_info">
+              <span class="article__comment_about">Emma Shifter</span>
+              <span class="article__comment_about">8 месяцев назад</span>
+              <p class="article__comment_text">
+                Sed ut volutpat diam, ut finibus erat. Suspendisse et vulputate enim. Nulla fringilla dolor vitae suscipit pellentesque. <br> 
+                Sed a faucibus ante. Phasellus condimentum arcu commodo nisl tincidunt, a luctus magna placerat.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+      
+    </div>
+  </main>
+
+</body>
+
+</html>

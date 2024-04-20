@@ -47,7 +47,7 @@ main {
 }
 
 .sidenav__menu {
-  padding-top: 40px;
+  margin-top: 55px;
 
   display: flex;
   flex-direction: column;
