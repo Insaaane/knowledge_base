@@ -21,7 +21,7 @@ const styles = {
 function Main() {
   return (
   <div className="main">
-    <h1 className="main__title">Документы</h1>
+    <h1 className="main__title title">Документы</h1>
     <input className="main__search" type="text" placeholder="Поиск" style={styles.searchIcon}/>
 
     <div className="main__cards">

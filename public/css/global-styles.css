@@ -24,6 +24,10 @@ main {
   margin-left: 255px;
 }
 
+.title {
+  font-size: 72px;
+  line-height: 64px;
+}
 
 /* Боковое меню - начало */
 
