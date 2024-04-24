@@ -1,0 +1,57 @@
+.versions {
+  padding: 58px 85px;
+}
+
+.versions__title {
+  margin-bottom: 60px;
+}
+
+.versions__list {
+  max-width: 956px;
+}
+
+.versions__item {
+  position: relative;
+  margin-bottom: 10px;
+  line-height: 32px;
+
+  padding-left: 78px;
+  /* background: url(./img/version-point-icon.svg) no-repeat left top; */
+  overflow: hidden;
+}
+
+.versions__item::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 3px;
+  background-color: #14191A;
+  border-radius: 5px;
+  left: 32px;
+  top: 41px;
+  
+}
+
+.versions__item_about {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.versions__changes_item {
+  font-size: 24px;
+}
+
+
+.versions__changes {
+  margin-bottom: 10px;
+}
+
+.versions__changes_item::before {
+  content: '- ';
+}
+
+.versions__author-wrap {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}

@@ -3,6 +3,52 @@
   margin: 0 auto;
 }
 
+/* Боковое меню - начало */
+
+.sidenav {
+  background-color: #F6F6F4;
+  width: 255px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 38px 33px 69px 21px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav__logo {
+  width: 134px;
+  height: 85px;
+  margin-left: 23px;
+}
+
+.sidenav__menu {
+  margin-top: 55px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidenav__account {
+  margin-top: auto;
+  text-align: center;
+}
+
+.sidenav__account-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.sidenav__account-btn_wrap {
+  margin-top: 12px;
+}
+
+/* Боковое меню - конец */
+
+
 /* Вход - начало */
 
 .entry {

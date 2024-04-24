@@ -1,8 +1,8 @@
 import "../css/Entry.css";
 import React from "react";
-import fullLogo from "/Users/daybo/Desktop/knowledge_base/markup/img/full-logo.svg"
+import fullLogo from "/Users/daybo/Desktop/knowledge_base/markup/img/full-logo.svg";
 
-function Login() {
+export default function Login() {
   return (
   <div className="entry">
     <img className="entry__logo" src={fullLogo} alt="Логотип базы знаний 'IKnow'"/>
@@ -15,5 +15,3 @@ function Login() {
   </div>
   );
 }
-
-export default Login;
