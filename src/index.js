@@ -1,15 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Entry from "./components/Entry";
-import Documents from "./components/Documents";
+import { BrowserRouter } from 'react-router-dom';
+
 import SideMenu from "./components/SideMenu";
 import Main from "./components/Main";
-import Versions from "./components/Versions";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <SideMenu/>
-    <Entry/>
-  </React.StrictMode>
+    <Main/>
+  </BrowserRouter>
 );

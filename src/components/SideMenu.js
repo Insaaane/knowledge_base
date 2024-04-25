@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import '../css/SideMenu.css';
 import SideLogo from "/Users/daybo/Desktop/knowledge_base/markup/img/logo-sidenav.svg";
 import AccountIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/account-icon.svg";
@@ -10,20 +12,20 @@ export default function SideMenu() {
 
 		<ul className="sidenav__menu">
 			<li className="sidenav__menu-item">
-				<a href="#" className="sidenav__link">Главная</a>
+				<Link to='/documents'>Главная</Link>
 			</li>
 			<li className="sidenav__menu-item">
-				<a href="#" className="sidenav__link">Конструктор моделей</a>
+				<Link to='/'>Конструктор моделей</Link>
 			</li>
 			<li className="sidenav__menu-item">
-				<a href="#" className="sidenav__link">Конструктор формул</a>
+				<Link to='/'>Конструктор формул</Link>
 			</li>
 		</ul>
 
 		<div className="sidenav__account">
 			<img className="sidenav__account-icon" src={AccountIcon} alt="Вход в аккаунт"/>
 			<div className="sidenav__account-btn_wrap">
-				<a href="#" className="sidenav__account-btn">Войти в систему</a>
+				<Link to='/'>Войти в систему</Link>
 			</div>
 		</div>
 	</div>
