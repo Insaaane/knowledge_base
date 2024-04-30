@@ -16,7 +16,7 @@ body {
 
 html {
 	background-image: url('../img/bg.png');
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-size: 100% auto;
 }
 
@@ -26,5 +26,5 @@ main {
 
 .title {
   font-size: 72px;
-  line-height: 64px;
+  line-height: 72px;
 }

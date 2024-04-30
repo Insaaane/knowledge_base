@@ -39,55 +39,113 @@
   <!-- Основная часть -->
   <main>
     <div class="article">
-      <h1 class="article__title title">Название документа</h1>
+      <h1 class="article__title title">Статья о документе</h1>
 
       <div class="article__info_wrap">
         <div class="article__info">
           <p class="article__info_label">Текст: <span class="article__label_text">Emma Shifter</span></p>
           <p class="article__info_label">Дата: <span class="article__label_text">21 декабря 2023</span></p>
         </div>
-        
+
         <button class="article__versions-btn">история версий</button>
       </div>
 
-      <textarea class="article__text" name="" id="" cols="" rows="">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus ipsum sit amet iaculis mollis. Suspendisse lacinia tincidunt enim eu finibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut fringilla ligula ligula, et tempor odio aliquam eu.
-Nam ut augue nunc. Nunc et enim finibus, semper dolor id, tincidunt magna. Nam blandit gravida velit sed posuere. 
-Donec sem mi, maximus non turpis ullamcorper, accumsan mollis enim. 
-Maecenas justo est, mattis id sagittis et, elementum vitae purus. Suspendisse sit amet volutpat orci. 
-Nullam suscipit orci ac ipsum tincidunt pretium. Vestibulum vestibulum et augue non suscipit. 
-Phasellus vel dapibus sapien, non scelerisque dolor. Donec dictum nunc dolor, vitae iaculis arcu interdum vel.
-Sed ut volutpat diam, ut finibus erat. Suspendisse et vulputate enim. Nulla fringilla dolor vitae suscipit pellentesque. Sed a faucibus ante. Phasellus condimentum arcu commodo nisl tincidunt, a luctus magna placerat. Nullam ut lectus nec urna finibus consectetur ut et tellus. Suspendisse sit amet porta lorem. Sed imperdiet sodales ligula quis semper. In hac habitasse platea dictumst. Praesent eros libero, molestie in nisl nec, semper mollis tortor. Etiam eget maximus dui, eget finibus neque.
-      </textarea>
+      <p class="article__text" name="" id="" cols="" rows="">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus ipsum sit amet iaculis mollis. Suspendisse
+        lacinia tincidunt enim eu finibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+        cubilia curae; Ut fringilla ligula ligula, et tempor odio aliquam eu.<br />
+        Nam ut augue nunc. Nunc et enim finibus, semper dolor id, tincidunt magna. Nam blandit gravida velit sed
+        posuere.<br/>
+        Donec sem mi, maximus non turpis ullamcorper, accumsan mollis enim.<br/>
+        Maecenas justo est, mattis id sagittis et, elementum vitae purus. Suspendisse sit amet volutpat orci.<br/>
+        Nullam suscipit orci ac ipsum tincidunt pretium. Vestibulum vestibulum et augue non suscipit.<br/>
+        Phasellus vel dapibus sapien, non scelerisque dolor. Donec dictum nunc dolor, vitae iaculis arcu interdum vel.<br/>
+        Sed ut volutpat diam, ut finibus erat. Suspendisse et vulputate enim. Nulla fringilla dolor vitae suscipit
+        pellentesque. Sed a faucibus ante. Phasellus condimentum arcu commodo nisl tincidunt, a luctus magna placerat.
+        Nullam ut lectus nec urna finibus consectetur ut et tellus. Suspendisse sit amet porta lorem. Sed imperdiet
+        sodales ligula quis semper. In hac habitasse platea dictumst. Praesent eros libero, molestie in nisl nec, semper
+        mollis tortor. Etiam eget maximus dui, eget finibus neque.
+      </p>
 
       <p class="article__info_label">Документ: <a href="#" class="article__label_text">*ссылка на документ*</a></p>
 
-      <div class="article__comments">
-        <h2 class="article__comments_title">Комментарии</h2>
+      <div class="article__formulas">
+        <div class="article__formulas_title-wrap">
+          <h2 class="article__formulas_title">Список используемых формул</h2>
+          <button class="article__add-formula">добавить формулу</button>
+        </div>
 
-        <textarea class="article__comment_input" name="" id="" cols="" rows="" placeholder="Напишите тут"></textarea>
-        
+        <ul class="article__formulas-list">
+          <li class="article__formulas-item">
+            <p class="article__formula_nubmer-wrap">
+              [<span class="article__formula_nubmer">1</span>]
+            </p>
+            <img src="https://latex.codecogs.com/svg.image?\LARGE&space;(x+y)^2=x^2+y^2+2xy" alt="Формула"
+              class="article__formula_preview">
+            <p class="article__formula_name">формула для расчета квадрата суммы</p>
+            <button class="article__formula_edit-btn">
+              <img src="./img/edit-icon.svg" alt="Редактировать формулу" class="article__formula_edit-icon">
+            </button>
+          </li>
+
+          <li class="article__formulas-item">
+            <p class="article__formula_nubmer-wrap">
+              [<span class="article__formula_nubmer">2</span>]
+            </p>
+            <img src="https://latex.codecogs.com/svg.image?\LARGE&space;(x+y)^2=x^2+y^2+2xy" alt="Формула"
+              class="article__formula_preview">
+            <p class="article__formula_name">формула для расчета квадрата суммы</p>
+            <button class="article__formula_edit-btn">
+              <img src="./img/edit-icon.svg" alt="Редактировать формулу" class="article__formula_edit-icon">
+            </button>
+          </li>
+
+          <li class="article__formulas-item">
+            <p class="article__formula_nubmer-wrap">
+              [<span class="article__formula_nubmer">3</span>]
+            </p>
+            <img src="https://latex.codecogs.com/svg.image?\LARGE&space;(x+y)^2=x^2+y^2+2xy" alt="Формула"
+              class="article__formula_preview">
+            <p class="article__formula_name">формула для расчета квадрата суммы</p>
+            <button class="article__formula_edit-btn">
+              <img src="./img/edit-icon.svg" alt="Редактировать формулу" class="article__formula_edit-icon">
+            </button>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="article__comments">
+        <h3 class="article__comments_title">Комментарии</h3>
+
+        <div class="article__comment_input-wrap">
+          <textarea class="article__comment_input" name="" id="" cols="" rows="" placeholder="Напишите тут"></textarea>
+          <button class="article_comment_send-btn">Отправить</button>
+        </div>
+
         <ul class="article__comments_list">
-  
+
           <li class="article__comment">
             <img class="article__comment_logo" src="./img/avatar-circle.png" alt="Аватар пользователя">
             <div class="article__comment_info">
               <span class="article__comment_about">Emma Shifter</span>
               <span class="article__comment_about">8 месяцев назад</span>
               <p class="article__comment_text">
-                Sed ut volutpat diam, ut finibus erat. Suspendisse et vulputate enim. Nulla fringilla dolor vitae suscipit pellentesque. <br> 
+                Sed ut volutpat diam, ut finibus erat. Suspendisse et vulputate enim. Nulla fringilla dolor vitae
+                suscipit pellentesque. <br>
                 Sed a faucibus ante. Phasellus condimentum arcu commodo nisl tincidunt, a luctus magna placerat.
               </p>
             </div>
           </li>
-  
+
           <li class="article__comment">
             <img class="article__comment_logo" src="./img/avatar-circle.png" alt="Аватар пользователя">
             <div class="article__comment_info">
               <span class="article__comment_about">Emma Shifter</span>
               <span class="article__comment_about">8 месяцев назад</span>
               <p class="article__comment_text">
-                Sed ut volutpat diam, ut finibus erat. Suspendisse et vulputate enim. Nulla fringilla dolor vitae suscipit pellentesque. <br> 
+                Sed ut volutpat diam, ut finibus erat. Suspendisse et vulputate enim. Nulla fringilla dolor vitae
+                suscipit pellentesque. <br>
                 Sed a faucibus ante. Phasellus condimentum arcu commodo nisl tincidunt, a luctus magna placerat.
               </p>
             </div>
@@ -95,7 +153,7 @@ Sed ut volutpat diam, ut finibus erat. Suspendisse et vulputate enim. Nulla frin
 
         </ul>
       </div>
-      
+
     </div>
   </main>
 
