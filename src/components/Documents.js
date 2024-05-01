@@ -8,6 +8,7 @@ import Card5 from "/Users/daybo/Desktop/knowledge_base/markup/img/commerce-docs-
 import Card6 from "/Users/daybo/Desktop/knowledge_base/markup/img/organization-docs-img.png";
 import SearchIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/search-icon.svg";
 import DeleteIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/delete-icon.svg";
+import { Link } from "react-router-dom";
 
 const styles = {
   searchIcon: {
@@ -25,41 +26,41 @@ export default function Main() {
     <input className="main__search" type="text" placeholder="Поиск" style={styles.searchIcon}/>
 
     <div className="main__cards">
-      <div className="main__card">
+      <Link to='/articles-list' className="main__card">
         <img className="main__card-img" src={Card1} alt="Нормативные документы"/>
         <h2 className="main__card-title">Нормативные документы</h2>
-      </div>
+      </Link>
 
-      <div className="main__card">
+      <Link to='/articles-list' className="main__card">
         <img className="main__card-img" src={Card2} alt="Информация о сотрудниках"/>
         <h2 className="main__card-title">Информация о сотрудниках</h2>
-      </div>
+      </Link>
       
-      <div className="main__card">
+      <Link to='/articles-list' className="main__card">
         <img className="main__card-img" src={Card3} alt="Бухгалтерия"/>
         <h2 className="main__card-title">Бухгалтерия</h2>
-      </div>
+      </Link>
 
-      <div className="main__card">
+      <Link to='/articles-list' className="main__card">
         <img className="main__card-img" src={Card4} alt="Проектная деятельность"/>
         <h2 className="main__card-title">Проектная деятельность</h2>
-      </div>
+      </Link>
 
-      <div className="main__card">
+      <Link to='/articles-list' className="main__card">
         <img className="main__card-img" src={Card5} alt="Коммерческие документы"/>
         <h2 className="main__card-title">Коммерческие документы</h2>
-      </div>
+      </Link>
       
-      <div className="main__card">
+      <Link to='/articles-list' className="main__card">
         <img className="main__card-img" src={Card6} alt="Организационно-правовые документы"/>
         <h2 className="main__card-title">Организационно-правовые документы</h2>
-      </div>
+      </Link>
 
     </div>
 
     <div className="main__deleted-wrap">
       <button className="main__deleted">
-        <span className="main__deleted-icon" style={styles.deleteIcon}>Удаленные документы</span>
+        <Link to='/archive' className="main__deleted-icon" style={styles.deleteIcon}>Удаленные документы</Link>
       </button>
     </div>
   </div>

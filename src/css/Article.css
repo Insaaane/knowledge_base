@@ -1,0 +1,150 @@
+.article {
+  padding: 51px 87px 44px 87px;
+}
+
+.article__title {
+  margin-bottom: 22px;
+}
+
+.article__info_wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.article__info {
+  display: flex;
+  gap: 40px;
+}
+
+.article__info_label {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.article__label_text {
+  font-weight: 400;
+}
+
+.article__versions-btn {
+  /* background: url(./img/versions-icon.svg) no-repeat left center; */
+  padding-left: 31px;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.article__text {
+  font-size: 24px;
+  line-height: 32px;
+
+  margin-bottom: 18px;
+}
+
+.article__formulas {
+  margin: 22px 0 28px 0;
+}
+
+.article__formulas_title-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 19px;
+}
+
+.article__formulas_title {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.article__add-formula {
+  padding-left: 31px;
+  /* background: url(./img/add-icon.svg) no-repeat left 10px; */
+  font-size: 28px;
+  line-height: 32px;
+}
+
+.article__formulas-item {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+
+  font-size: 28px;
+  line-height: 32px;
+
+  margin-bottom: 12px;
+}
+
+.article__formula_name::before {
+  content: "- ";
+}
+
+.article__formula_edit-btn {
+  height: 24px;
+}
+
+.article__comments_title {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 600;
+  
+  margin-top: 24px;
+  margin-bottom: 18px;
+}
+
+.article__comment_input-wrap {
+  display: flex;
+  margin-bottom: 18px;
+  gap: 22px;
+  align-items: end;
+}
+
+.article__comment_input {
+  padding: 10px 21px;
+  border-radius: 10px;
+  background: #F6F6F6;
+  resize: none;
+
+  width: 100%;
+  min-height: 105px;
+  font-size: 16px;
+}
+
+.article__comment_input::placeholder {
+  color: #14191A;
+}
+
+.article_comment_send-btn {
+  padding-right: 28px;
+  height: 32px;
+
+  font-size: 24px;
+  line-height: 32px;
+  /* background: url(./img/send-message-icon.svg) no-repeat right center; */
+  margin-right: 13px;
+}
+
+.article__comments_list {
+  padding-right: 180px;
+}
+.article__comment {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 14px;
+}
+
+.article__comment_logo {
+  border-radius: 50%;
+  width: 47px;
+  height: 47px;
+}
+
+.article__comment_about {
+  font-size: 14px;
+  line-height: 32px;
+  margin-right: 10px;
+}
+
+.article__comment_text {
+  font-size: 18px;
+  line-height: 32px;
+}

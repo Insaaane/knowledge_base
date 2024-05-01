@@ -1,0 +1,51 @@
+.archive {
+  padding: 64px 80px;
+}
+
+.archive__title {
+  margin-bottom: 36px;
+}
+
+.archive__item {
+  margin-bottom: 24px;
+  padding-left: 78px;
+
+  /* background: url(./img/version-point-icon.svg) no-repeat left 6px; */
+
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.archive__item-wrap {
+  max-width: 1111px;
+}
+
+.archive__item-title {
+  font-size: 32px;
+  line-height: 38px;
+
+  margin-bottom: 12px;
+}
+
+.archive__item_info {
+  display: flex;
+  gap: 40px;
+}
+
+.archive__info_label {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.archive__label_text {
+  font-weight: 400;
+}
+
+.archive__restore-btn {
+  font-size: 24px;
+  line-height: 32px;
+  padding-right: 28px;
+  /* background: url(./img/restore-icon.svg) no-repeat right center; */
+}

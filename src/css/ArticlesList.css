@@ -1,0 +1,47 @@
+.art-list {
+  padding: 64px 80px;
+}
+
+.art-list__title {
+  margin-bottom: 36px;
+}
+
+.art-list__add-article-btn {
+  font-size: 28px;
+  line-height: 32px;
+  padding-left: 31px;
+
+  /* background: url(./img/add-icon.svg) no-repeat left 6px; */
+
+  margin-bottom: 22px;
+}
+
+.art-list__item {
+  margin-bottom: 24px;
+  padding-left: 78px;
+
+  /* background: url(./img/version-point-icon.svg) no-repeat left 6px; */
+  max-width: 1111px;
+}
+
+.art-list__art-title {
+  font-size: 32px;
+  line-height: 38px;
+
+  margin-bottom: 12px;
+}
+
+.art-list__item_info {
+  display: flex;
+  gap: 40px;
+}
+
+.art-list__info_label {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.art-list__label_text {
+  font-weight: 400;
+}
