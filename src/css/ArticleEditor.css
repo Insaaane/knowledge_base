@@ -1,0 +1,157 @@
+.art-editor {
+  padding: 55px 80px 68px 80px;
+}
+
+.art-editor__article {
+  margin-bottom: 28px;
+}
+
+.art-editor__title-input {
+  font-size: 72px;
+  max-height: 260px;
+  min-height: 86px;
+  width: 100%;
+  resize: vertical;
+
+  margin-bottom: 22px;
+}
+
+.art-editor__title-input::placeholder {
+  color: inherit;
+}
+
+.art-editor__article-label {
+  display: block;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 18px;
+}
+
+.art-editor__text-input {
+  font-size: 16px;
+  width: 100%;
+  min-height: 320px;
+  max-height: 420px;
+  padding: 22px 20px;
+  background-color: #F6F6F6;
+  border-radius: 10px;
+  resize: vertical;
+
+  margin-bottom: 22px;
+}
+
+.art-editor__text-input::placeholder {
+  color: inherit;
+}
+
+.art-editor__document {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.art-editor__doc-label {
+  font-weight: 400;
+  padding-right: 32px;
+  /* background: url(./img/file-icon.svg) no-repeat right center; */
+}
+
+.art-editor__formulas {
+  margin: 22px 0 28px 0;
+}
+
+.art-editor__formulas_title {
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 18px;
+}
+
+.art-editor__formulas-list {
+  margin-bottom: 18px;
+}
+
+.art-editor__formulas-item {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+
+  font-size: 28px;
+  line-height: 32px;
+
+  margin-bottom: 12px;
+}
+
+.art-editor__formula_name::before {
+  content: "- ";
+}
+
+.art-editor__formula_edit-btn {
+  height: 24px;
+}
+
+.art-editor__add-formulas-wrap {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.art-editor__new-formula-btn {
+  font-size: 24px;
+  line-height: 32px;
+  padding-left: 31px;
+
+  /* background: url(./img/add-icon.svg) no-repeat left 6px; */
+}
+
+.art-editor__or {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.art-editor__select-formula {
+  font-size: 16px;
+  line-height: 19px;
+
+  background-color: #F6F6F6;
+  /* background-image: url(./img/select-btn-icon.svg); */
+  background-repeat: no-repeat;
+  background-position: right 15px top 8px;
+  border-radius: 6px;
+  padding: 9px 60px 9px 20px;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+.art-editor__buttons-wrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.art-editor__cancle-btn {
+  border-radius: 10px;
+  width: 159px;
+  padding-top: 9px;
+  padding-bottom: 11px;
+
+  border: 1px solid #D9D9D9;
+  background: #FFF;
+}
+
+.art-editor__public-btn {
+  border-radius: 10px;
+  width: 159px;
+  padding-top: 9px;
+  padding-bottom: 11px;
+
+  border-radius: 10px;
+  background: #D9D9D9;
+}

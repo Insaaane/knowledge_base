@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/css/reset.css">
+  <link rel="stylesheet" href="../public/css/global-styles.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>Редактор статей</title>
+</head>
+
+<body>
+  <!-- Боковое меню - начало -->
+  <div class="sidenav">
+    <img class="sidenav__logo" src="./img/logo-sidenav.svg" alt="Логотип базы знаний 'IKnow'">
+
+    <ul class="sidenav__menu">
+      <li class="sidenav__menu-item">
+        <a href="#" class="sidenav__link">Главная</a>
+      </li>
+      <li class="sidenav__menu-item">
+        <a href="#" class="sidenav__link">Конструктор моделей</a>
+      </li>
+      <li class="sidenav__menu-item">
+        <a href="#" class="sidenav__link">Конструктор формул</a>
+      </li>
+    </ul>
+
+    <div class="sidenav__account">
+      <img class="sidenav__account-icon" src="./img/account-icon.svg" alt="Вход в аккаунт">
+      <div class="sidenav__account-btn_wrap">
+        <a href="#" class="sidenav__account-btn">Войти в систему</a>
+      </div>
+    </div>
+  </div>
+  <!-- Боковое меню - конец -->
+
+  <!-- Основная часть -->
+  <main>
+    <form class="art-editor" action="https://music.yandex.ru/home" method="post" enctype="multipart/form-data">
+
+      <div class="art-editor__article">
+        <textarea name="" id="" rows="1" class="art-editor__title-input" placeholder="Название статьи"></textarea>
+
+        <label for="article-text" class="art-editor__article-label">Текст статьи</label>
+  
+        <textarea name="" id="article-text" class="art-editor__text-input" placeholder="Начните писать вашу статью тут..."></textarea>    
+
+        <p class="art-editor__document">
+          Документ: 
+          <label for="input-doc" class="art-editor__doc-label">прикрепить ссылку на документ</label>
+          <input class="art-editor__add-file" id="input-doc" type="file" hidden>
+        </p>
+        
+      </div>
+      
+      <div class="art-editor__formulas">
+        <h2 class="art-editor__formulas_title">Список используемых формул</h2>
+          
+        <ul class="art-editor__formulas-list">
+
+          <li class="art-editor__formulas-item">
+            <p class="art-editor__formula_nubmer-wrap">
+              [<span class="art-editor__formula_nubmer">1</span>]
+            </p>
+            <img src="https://latex.codecogs.com/svg.image?\LARGE&space;(x+y)^2=x^2+y^2+2xy" alt="Формула"
+              class="art-editor__formula_preview">
+            <p class="art-editor__formula_name">формула для расчета квадрата суммы</p>
+            <button class="art-editor__formula_edit-btn">
+              <img src="./img/edit-icon.svg" alt="Редактировать формулу" class="art-editor__formula_edit-icon">
+            </button>
+          </li>
+
+          <li class="art-editor__formulas-item">
+            <p class="art-editor__formula_nubmer-wrap">
+              [<span class="art-editor__formula_nubmer">2</span>]
+            </p>
+            <img src="https://latex.codecogs.com/svg.image?\LARGE&space;(x+y)^2=x^2+y^2-2xy" alt="Формула"
+              class="art-editor__formula_preview">
+            <p class="art-editor__formula_name">формула для расчета квадрата разности</p>
+            <button class="art-editor__formula_edit-btn">
+              <img src="./img/edit-icon.svg" alt="Редактировать формулу" class="art-editor__formula_edit-icon">
+            </button>
+          </li>
+
+        </ul>
+
+        <div class="art-editor__add-formulas-wrap">
+          <button class="art-editor__new-formula-btn">добавить новую формулу</button>
+
+          <span class="art-editor__or">или</span>
+
+          <select name="" id="" class="art-editor__select-formula">
+            <option value="None" class="art-editor__select-item" selected>добавить имеющуюся формулу</option>
+            <option value="Formula 1" class="art-editor__select-item">Formula 1</option>
+            <option value="Formula 2" class="art-editor__select-item">Formula 2</option>
+            <option value="Formula 3" class="art-editor__select-item">Formula 3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="art-editor__buttons-wrap">
+        <button class="art-editor__cancle-btn">Отмена</button>
+        <button type="submit" class="art-editor__public-btn">Опубликовать</button>
+      </div>
+
+    </form>
+
+  </main>
+
+</body>
+
+</html>

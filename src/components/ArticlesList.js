@@ -19,7 +19,9 @@ export default function ArticlesList() {
 
       <h1 className="art-list__title title">Статьи блока «Нормативные документы»</h1>
 
-      <button className="art-list__add-article-btn" style={styles.addIcon}>добавить статью</button>
+      <Link to='/article-editor'>
+        <button className="art-list__add-article-btn" style={styles.addIcon}>добавить статью</button>
+      </Link>
 
       <ul className="art-list__list">
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/css/reset.css">
+  <link rel="stylesheet" href="../public/css/global-styles.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>Редактор формул</title>
+</head>
+
+<body>
+  <!-- Боковое меню - начало -->
+  <div class="sidenav">
+    <img class="sidenav__logo" src="./img/logo-sidenav.svg" alt="Логотип базы знаний 'IKnow'">
+
+    <ul class="sidenav__menu">
+      <li class="sidenav__menu-item">
+        <a href="#" class="sidenav__link">Главная</a>
+      </li>
+      <li class="sidenav__menu-item">
+        <a href="#" class="sidenav__link">Конструктор моделей</a>
+      </li>
+      <li class="sidenav__menu-item">
+        <a href="#" class="sidenav__link">Конструктор формул</a>
+      </li>
+    </ul>
+
+    <div class="sidenav__account">
+      <img class="sidenav__account-icon" src="./img/account-icon.svg" alt="Вход в аккаунт">
+      <div class="sidenav__account-btn_wrap">
+        <a href="#" class="sidenav__account-btn">Войти в систему</a>
+      </div>
+    </div>
+  </div>
+  <!-- Боковое меню - конец -->
+
+  <!-- Основная часть -->
+  <main>
+    <div class="formula-editor">
+
+      <h1 class="formula-editor__title title">Конструктор формул</h1>
+
+      <input class="main__search" type="text" placeholder="Поиск">
+
+      <h2 class="formula-editor__all-formulas_title">
+        Все фомулы (<span class="formula-editor__formulas-count">121</span>)
+      </h2>
+
+      <ul class="formula-editor__all-formulas">
+
+        <li class="article__formulas-item">
+          <p class="formula-editor__formula-name">Квадрат суммы</p>
+          <div class="formula-editor__formula-wrap">
+            <img src="https://latex.codecogs.com/svg.image?\LARGE&space;(x+y)^2=x^2+y^2+2xy" alt="Формула"
+              class="article__formula_preview">
+            <button class="article__formula_edit-btn">
+              <img src="./img/edit-icon.svg" alt="Редактировать формулу" class="article__formula_edit-icon">
+            </button>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </main>
+
+</body>
+
+</html>
