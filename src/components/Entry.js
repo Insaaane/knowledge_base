@@ -1,16 +1,62 @@
 import "../css/Entry.css";
-import React from "react";
+import React, {useState} from "react";
+import { useNavigate } from "react-router";
 import fullLogo from "/Users/daybo/Desktop/knowledge_base/markup/img/full-logo.svg";
 
 export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  // const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch("http://127.0.0.1:8000/api/login/token/", { 
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Ошибка авторизации");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        localStorage.setItem('accessToken', data.access);
+        localStorage.setItem('refreshToken', data.refresh);
+
+        navigate('/documents');
+      })
+      .catch((error) => {
+        // setError(error.message);
+      });
+  };
+
   return (
   <div className="entry__wrapper">
     <div className="entry">
       <img className="entry__logo" src={fullLogo} alt="Логотип базы знаний 'IKnow'"/>
 
-      <form className="entry__login-form" action="http://127.0.0.1:8000/login/" method="post">
-        <input className="entry__login-input" type="text" id="username" name="username" placeholder="Введите email" autoComplete="off"/>
-        <input className="entry__login-input" type="password" id="password" name="password" placeholder="Введите пароль"/>
+      <form className="entry__login-form" onSubmit={handleSubmit}>
+        <input className="entry__login-input" 
+          type="text" id="username" 
+          name="username" 
+          placeholder="Введите email" 
+          autoComplete="off"
+          value={username}
+          onChange={(evt) => setUsername(evt.target.value)}
+        />
+        <input className="entry__login-input" 
+          type="password" 
+          id="password" 
+          name="password" 
+          placeholder="Введите пароль"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <button className="entry__login-btn" type="submit">Войти</button>
       </form>
     </div>

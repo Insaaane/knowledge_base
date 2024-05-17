@@ -680,6 +680,157 @@
 
 /* Редактор формул - начало */
 
+.formula-editor {
+  padding: 64px 80px;
+}
 
+.formula-editor__title {
+  margin-bottom: 24px;
+}
+
+.main__search {
+  margin-bottom: 36px;
+}
+
+.formula-editor__all-formulas_title {
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 6px;
+}
+
+.formula-editor__all-formulas {
+  margin-bottom: 22px;
+  max-height: 250px;
+  
+  display: flex;
+  column-gap: 115px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.formulas-item {
+  margin-bottom: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.formula-editor__formula-name {
+  width: auto;
+}
+
+.edit-formula-btn {
+  margin-top: 5px;
+  margin-left: 12px;
+}
+
+.formula_preview {
+  width: 277px;
+}
+
+
+
+.formula {
+  margin-top: 36px;
+  display: flex;
+  gap: 100px;
+}
+
+.formula__title {
+  font-size: 40px;
+  line-height: 48px;
+
+  margin-bottom: 23px;
+}
+
+.formula__container {
+  max-width: 600px;
+}
+
+.formula__text {
+  font-size: 16px;
+  line-height: 32px;
+
+  padding: 8px 40px;
+  border-radius: 10px;
+  background: #F6F6F6;
+  margin-bottom: 22px;
+
+  width: 100%;
+}
+
+.formula__preview-title {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.edit_formula_preview {
+  /* max-width: 277px; */
+  height: 40px;
+  margin-bottom: 18px;
+}
+
+.formula__variables_item {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.formula__save-btn_wrap {
+  text-align: end;
+}
+
+.formula__save-btn {
+  font-size: 24px;
+  line-height: 32px;
+
+  margin-top: 16px;
+  padding-right: 28px;
+  background: url(./img/check-icon.svg) no-repeat right center;
+}
+
+
+
+.formula__syntax {
+  margin-top: 70px;
+}
+
+.formula__syntax-title {
+  font-size: 24px;
+  line-height: 29px;
+
+  margin-bottom: 14px;
+}
+
+.syntax__desc-title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.formula__syntax_description {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 23px;
+}
+
+.syntax__desc-item {
+  text-align: center;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.syntax__img {
+  margin-bottom: 8px;
+  max-height: 44px;
+}
+
+.syntax__desc-text {
+  display: block;
+  white-space: nowrap;
+  background: #E1EFC5;
+}
 
 /* Редактор формул - конец */
