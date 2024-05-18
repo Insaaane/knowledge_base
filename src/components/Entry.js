@@ -2,6 +2,7 @@ import "../css/Entry.css";
 import React, {useState} from "react";
 import { useNavigate } from "react-router";
 import fullLogo from "/markup/img/full-logo.svg";
+import { URLS } from "../urls.js";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -11,7 +12,7 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://127.0.0.1:8000/api/login/token/", { 
+    fetch(URLS.login, { 
       method: "POST",
       headers: {
         "Content-Type": "application/json",

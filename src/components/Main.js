@@ -2,11 +2,11 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Entry from './Entry.js';
-import Documents from './Documents.js';
+import Documents from './Documents/Documents.js';
 import Article from './Article.js';
 import ArticlesList from './ArticlesList.js';
-import Versions from './Versions.js';
-import Archive from './Archive.js';
+import Versions from './Versions/Versions.js';
+import Archive from './Archive/Archive.js';
 import ArticleEditor from './ArticleEditor.js';
 import FormulaEditor from './FormulaEditor.js';
 
