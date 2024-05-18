@@ -8,7 +8,7 @@ import ArticlesList from './ArticlesList.js';
 import Versions from './Versions/Versions.js';
 import Archive from './Archive/Archive.js';
 import ArticleEditor from './ArticleEditor.js';
-import FormulaEditor from './FormulaEditor.js';
+import Formulas from './Formulas/Formulas.js';
 
 export default function Main() {
   return (
@@ -21,7 +21,7 @@ export default function Main() {
       <Route path='/versions' element={<Versions/>}/>
       <Route path='/archive' element={<Archive/>}/>
       <Route path='/article-editor' element={<ArticleEditor/>}/>
-      <Route path='/formulas' element={<FormulaEditor/>}/>
+      <Route path='/formulas' element={<Formulas/>}/>
     </Routes>
 	</main>
   )
