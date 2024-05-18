@@ -1,7 +1,7 @@
 import "../css/Entry.css";
 import React, {useState} from "react";
 import { useNavigate } from "react-router";
-import fullLogo from "/Users/daybo/Desktop/knowledge_base/markup/img/full-logo.svg";
+import fullLogo from "/markup/img/full-logo.svg";
 
 export default function Login() {
   const [username, setUsername] = useState("");

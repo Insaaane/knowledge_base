@@ -1,10 +1,10 @@
 import React from 'react';
 import '../css/Article.css';
-import EditIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/edit-icon.svg";
-import Avatar from "/Users/daybo/Desktop/knowledge_base/markup/img/avatar-circle.png";
-import VersionsIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/versions-icon.svg";
-import AddFormulaIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/add-icon.svg";
-import SendMessageIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/send-message-icon.svg";
+import EditIcon from "/markup/img/edit-icon.svg";
+import Avatar from "/markup/img/avatar-circle.png";
+import VersionsIcon from "/markup/img/versions-icon.svg";
+import AddFormulaIcon from "/markup/img/add-icon.svg";
+import SendMessageIcon from "/markup/img/send-message-icon.svg";
 import { Link } from 'react-router-dom';
 
 const styles = {

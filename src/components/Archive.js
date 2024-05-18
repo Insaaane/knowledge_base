@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Archive.css';
-import VersionPointIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/version-point-icon.svg";
-import RestoreIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/restore-icon.svg";
+import VersionPointIcon from "/markup/img/version-point-icon.svg";
+import RestoreIcon from "/markup/img/restore-icon.svg";
 
 const styles = {
   versionPointIcon: {

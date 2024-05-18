@@ -1,9 +1,9 @@
 import React from 'react';
 import '../css/ArticleEditor.css';
 
-import FileIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/file-icon.svg";
-import AddIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/add-icon.svg";
-import SelectIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/select-btn-icon.svg";
+import FileIcon from "/markup/img/file-icon.svg";
+import AddIcon from "/markup/img/add-icon.svg";
+import SelectIcon from "/markup/img/select-btn-icon.svg";
 
 const styles = {
   fileIcon: {

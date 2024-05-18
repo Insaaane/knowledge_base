@@ -1,9 +1,9 @@
 import React from 'react';
 import "../css/FormulaEditor.css";
-import EditIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/edit-icon.svg";
-import CheckIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/check-icon.svg";
-import SearchIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/search-icon.svg";
-import AddIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/add-icon.svg";
+import EditIcon from "/markup/img/edit-icon.svg";
+import CheckIcon from "/markup/img/check-icon.svg";
+import SearchIcon from "/markup/img/search-icon.svg";
+import AddIcon from "/markup/img/add-icon.svg";
 
 const styles = {
   checkIcon: {

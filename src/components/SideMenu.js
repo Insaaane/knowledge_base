@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import '../css/SideMenu.css';
-import SideLogo from "/Users/daybo/Desktop/knowledge_base/markup/img/logo-sidenav.svg";
-import AccountIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/account-icon.svg";
+import SideLogo from "/markup/img/logo-sidenav.svg";
+import AccountIcon from "/markup/img/account-icon.svg";
 
 export default function SideMenu() {
   return (

@@ -1,13 +1,14 @@
 import "../css/Documents.css";
 import React from "react";
-import Card1 from "/Users/daybo/Desktop/knowledge_base/markup/img/regulatory-docs-img.png";
-import Card2 from "/Users/daybo/Desktop/knowledge_base/markup/img/staff-info-img.png";
-import Card3 from "/Users/daybo/Desktop/knowledge_base/markup/img/accounting-img.png";
-import Card4 from "/Users/daybo/Desktop/knowledge_base/markup/img/projects-img.png";
-import Card5 from "/Users/daybo/Desktop/knowledge_base/markup/img/commerce-docs-img.png";
-import Card6 from "/Users/daybo/Desktop/knowledge_base/markup/img/organization-docs-img.png";
-import SearchIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/search-icon.svg";
-import DeleteIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/delete-icon.svg";
+// import Card1 from "/Users/daybo/Desktop/knowledge_base/markup/img/regulatory-docs-img.png";
+import Card1 from "/markup/img/regulatory-docs-img.png";
+import Card2 from "/markup/img/staff-info-img.png";
+import Card3 from "/markup/img/accounting-img.png";
+import Card4 from "/markup/img/projects-img.png";
+import Card5 from "/markup/img/commerce-docs-img.png";
+import Card6 from "/markup/img/organization-docs-img.png";
+import SearchIcon from "/markup/img/search-icon.svg";
+import DeleteIcon from "/markup/img/delete-icon.svg";
 import { Link } from "react-router-dom";
 
 const styles = {

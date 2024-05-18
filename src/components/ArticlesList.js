@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/ArticlesList.css';
-import AddIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/add-icon.svg";
-import VersionPointIcon from "/Users/daybo/Desktop/knowledge_base/markup/img/version-point-icon.svg";
+import AddIcon from "/markup/img/add-icon.svg";
+import VersionPointIcon from "/markup/img/version-point-icon.svg";
 import { Link } from 'react-router-dom';
 
 const styles = {

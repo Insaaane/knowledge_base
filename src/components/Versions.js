@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Versions.css';
-import Avatar from "/Users/daybo/Desktop/knowledge_base/markup/img/avatar-circle.png";
-import VersionPoint from "/Users/daybo/Desktop/knowledge_base/markup/img/version-point-icon.svg";
+import Avatar from "/markup/img/avatar-circle.png";
+import VersionPoint from "/markup/img/version-point-icon.svg";
 
 const styles = {
   versionPoint: {
