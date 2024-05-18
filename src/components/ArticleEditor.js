@@ -4,6 +4,7 @@ import '../css/ArticleEditor.css';
 import FileIcon from "/markup/img/file-icon.svg";
 import AddIcon from "/markup/img/add-icon.svg";
 import SelectIcon from "/markup/img/select-btn-icon.svg";
+import EditIcon from "/markup/img/select-btn-icon.svg";
 
 const styles = {
   fileIcon: {
@@ -49,7 +50,7 @@ export default function ArticleEditor() {
               className="art-editor__formula_preview"/>
             <p className="art-editor__formula_name">формула для расчета квадрата суммы</p>
             <button className="art-editor__formula_edit-btn">
-              <img src="./img/edit-icon.svg" alt="Редактировать формулу" className="art-editor__formula_edit-icon"/>
+              <img src={EditIcon} alt="Редактировать формулу" className="art-editor__formula_edit-icon"/>
             </button>
           </li>
 
