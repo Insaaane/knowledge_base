@@ -18,10 +18,10 @@
 
 .formula-editor__all-formulas {
   margin-bottom: 22px;
-  max-height: 250px;
+  max-height: 260px;
   
   display: flex;
-  column-gap: 115px;
+  column-gap: 20px;
   flex-wrap: wrap;
   flex-direction: column;
 }
@@ -38,12 +38,14 @@
 }
 
 .edit-formula-btn {
-  margin-top: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
   margin-left: 12px;
 }
 
 .formula_preview {
-  width: 277px;
+  /* max-width: 277px; */
+  height: 30px;
 }
 
 
@@ -94,7 +96,12 @@
   line-height: 32px;
 }
 
-.formula__save-btn_wrap {
+.formula__buttons_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formula__save-bnt_wrap {
   text-align: end;
 }
 
@@ -115,6 +122,13 @@
   margin-right: 20px;
 }
 
+.formula__cancel-btn {
+  font-size: 24px;
+  line-height: 32px;
+
+  margin-top: 16px;
+  margin-right: auto;
+}
 
 
 .formula__syntax {

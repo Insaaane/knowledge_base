@@ -48,6 +48,22 @@ export default function Formulas() {
     setIsEditorOpen(false);
   };
   
+  const handleSaveFormula = (newFormula) => {
+    setFormulas([...formulas, newFormula]);
+    setIsEditorOpen(false);
+  };
+
+  const handleUpdateFormula = (updatedFormula) => {
+    setFormulas(formulas.map(formula => 
+      formula.id === updatedFormula.id ? updatedFormula : formula
+    ));
+    setIsEditorOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsEditorOpen(false);
+  };
+
   return (
     <div className="formula-editor">
 
@@ -78,6 +94,9 @@ export default function Formulas() {
         <FormulaEditor 
           formula={selectedFormula} 
           onDelete={handleDeleteFormula}
+          onCancel={handleCancel}
+          onSave={handleSaveFormula}
+          onUpdate={handleUpdateFormula}
         />} 
     </div>
   )

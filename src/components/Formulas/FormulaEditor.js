@@ -10,7 +10,7 @@ const styles = {
   }
 }
 
-export default function FormulaEditor({ formula, onDelete }) {
+export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onUpdate }) {
   const [title, setTitle] = useState(formula ? formula.title : "");
   const [formulaText, setFormulaText] = useState(formula ? formula.formula : "");
   const [formulaImgUrl, setFormulaImgUrl] = useState(`${URLS.formulaImg}${formula ? formula.formula : ""}`);
@@ -18,7 +18,7 @@ export default function FormulaEditor({ formula, onDelete }) {
   useEffect(() => {
     setTitle(formula ? formula.title : "");
     setFormulaText(formula ? formula.formula : "");
-    setFormulaImgUrl(`${URLS.formulaImg}${formula ? formula.formula : `${URLS.formulaImg}x+1`}`);
+    setFormulaImgUrl(`${URLS.formulaImg}${formula ? formula.formula : ""}`);
   }, [formula]);
 
   useEffect(() => {
@@ -53,15 +53,59 @@ export default function FormulaEditor({ formula, onDelete }) {
     });
   };
 
+  const handleUpdate = (evt) => {
+    evt.preventDefault();
+    if (!formula || !formula.id) return;
 
-  const handleUpdate = () => {
-    // Логика удаления формулы
-    console.log("Формула удалена");
+    const url = `${URLS.formulas}${formula.id}/`;
+    const updatedFormula = {
+      title,
+      formula: formulaText,
+    };
+
+    fetchWithAuth(url, {
+      method: 'PUT',
+      body: JSON.stringify(updatedFormula),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Ошибка при обновлении формулы');
+      }
+      return response.json();
+    })
+    .then(data => {
+      onUpdate(data);  // Вызов внешней функции onUpdate для обновления списка формул
+    })
+    .catch(error => {
+      console.error("Error updating formula:", error);
+    });
   };
 
-  const handleSave = () => {
-    // Логика удаления формулы
-    console.log("Формула удалена");
+  const handleSave = (evt) => {
+    evt.preventDefault();
+    
+    const url = URLS.formulas;
+    const newFormula = {
+      title,
+      formula: formulaText,
+    };
+
+    fetchWithAuth(url, {
+      method: 'POST',
+      body: JSON.stringify(newFormula),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Ошибка при создании формулы');
+      }
+      return response.json();
+    })
+    .then(data => {
+      onSave(data);  // Вызов внешней функции onSave для обновления списка формул
+    })
+    .catch(error => {
+      console.error("Error creating formula:", error);
+    });
   };
 
   return (
@@ -91,21 +135,29 @@ export default function FormulaEditor({ formula, onDelete }) {
         <p className="formula__variables_item">y - второе слагаемое</p>
       </div>
 
-      <div className="formula__save-btn_wrap">
-        {formula && (
-        <>
-          <button type="button" className="formula__delete-btn" onClick={handleDelete}>
-            Удалить
-          </button>
-          <button type="submit" className="formula__save-btn" style={styles.checkIcon} onClick={handleUpdate}>
-            Обновить
-          </button>
-        </>
-        )}
-        
-        {!formula && (
-          <button type="submit" className="formula__save-btn" style={styles.checkIcon} onClick={handleSave}>Сохранить</button>
-        )}
+      <div className="formula__buttons_wrap">
+        <button type="button" className="formula__cancel-btn" onClick={onCancel}>
+            Отмена
+        </button>
+
+        <div className='formula__save-bnt_wrap'>
+          {formula && (
+          <>
+            <button type="button" className="formula__delete-btn" onClick={handleDelete}>
+              Удалить
+            </button>
+            <button type="submit" className="formula__save-btn" style={styles.checkIcon} onClick={handleUpdate}>
+              Обновить
+            </button>
+          </>
+          )}
+          
+          {!formula && (
+            <button type="submit" className="formula__save-btn" style={styles.checkIcon} onClick={handleSave}>
+              Сохранить
+            </button>
+          )}
+        </div>
         
       </div>
     </div>
