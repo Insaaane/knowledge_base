@@ -9,6 +9,7 @@ module.exports = {
     filename: "bundle.[contenthash].js",
     path: path.resolve(__dirname, "build"),
     clean: true,
+    publicPath: '/',
   },
   devtool: "source-map",
   plugins: [

@@ -4,7 +4,7 @@ import '../css/ArticleEditor.css';
 import FileIcon from "/markup/img/file-icon.svg";
 import AddIcon from "/markup/img/add-icon.svg";
 import SelectIcon from "/markup/img/select-btn-icon.svg";
-import EditIcon from "/markup/img/select-btn-icon.svg";
+import EditIcon from "/markup/img/edit-icon.svg";
 
 const styles = {
   fileIcon: {

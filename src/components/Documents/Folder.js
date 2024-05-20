@@ -10,9 +10,9 @@ import { Link } from "react-router-dom";
 
 const CARDS = [Card1, Card2, Card3, Card4, Card5, Card6];
 
-export default function Folder( { title } ) {
+export default function Folder( { id, title } ) {
   return (
-    <Link to='/articles-list' className="main__card">
+    <Link to={`/articles-list/${id}`} className="main__card">
       <img className="main__card-img" src={CARDS[Math.floor(Math.random() * CARDS.length)]} alt={title}/>
       <h2 className="main__card-title">{title}</h2>
     </Link>

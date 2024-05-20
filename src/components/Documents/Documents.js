@@ -38,7 +38,7 @@ export default function Documents() {
 
     <div className="main__cards">
       {folders.map(folder => (
-        <Folder key={folder.id} title={folder.title} />
+        <Folder key={folder.id} id={folder.id} title={folder.title} />
       ))}
     </div>
 
