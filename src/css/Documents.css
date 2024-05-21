@@ -72,11 +72,11 @@
 
   line-height: 32px;
   font-size: 24px;
-  color: #FFF;
   padding: 18px 35px;
 }
 
 .main__deleted-icon {
   /* background: url(./img/delete-icon.svg) no-repeat left top 2px; */
   padding-left: 32px;
+  color: #FFF;
 }

@@ -3,12 +3,14 @@ import '/src/css/Versions.css';
 import VersionsItem from "./VersionsItem.js";
 import { URLS } from "/src/urls.js";
 import { fetchWithAuth } from "/src/auth.js";
+import { useParams } from 'react-router-dom';
 
 export default function Versions() {
   const [versions, setVersions] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
-    fetchWithAuth(`${URLS.versions}${1}/`)
+    fetchWithAuth(`${URLS.versions}${id}/`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -26,12 +28,14 @@ export default function Versions() {
 
       <ul className="versions__list">
 
-        {versions.map(version => (
+        {versions.slice(0).reverse().map((version, index, array) => (
             <VersionsItem 
               key={version.id}
               author={version.authorID}
               date={version.creation_date}
               changes={version.changed}
+              index={index}
+              array={array}
             />
         ))}
 

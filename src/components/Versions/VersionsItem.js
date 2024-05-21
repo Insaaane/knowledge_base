@@ -24,10 +24,16 @@ function Changes({ changes }) {
   )
 }
 
-export default function VersionsItem({ author, date, changes }) {
+export default function VersionsItem({ author, date, changes, index, array }) {
+  let isFirst = "Изменено";
+
+  if (index === array.length - 1) {
+    isFirst = "Создано";
+  }
+
   return (
   <li className="versions__item" style={styles.versionPoint}>
-    <p className="versions__item_about">Изменено <span className="versions__item_date">{formatDate(date)}</span></p>
+    <p className="versions__item_about">{isFirst} <span className="versions__item_date">{formatDate(date)}</span></p>
     
     <div className="versions__changes_wrap">
       <Changes changes={changes}/>

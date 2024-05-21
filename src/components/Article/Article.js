@@ -33,7 +33,7 @@ const styles = {
 export default function Article() {
   const { id } = useParams();
   const navigate = useNavigate();
-  
+
   const [article, setArticle] = useState(null);
 
   const url = `${URLS.articles}${id}/`
@@ -78,7 +78,7 @@ export default function Article() {
         </div>
 
         <div className='article__options'>
-          <Link to='/versions' className="article__versions-btn" style={styles.versionsIcon}>история версий</Link>
+          <Link to={`/versions/${article.versionID}`} className="article__versions-btn" style={styles.versionsIcon}>история версий</Link>
           <Link to='/article-editor' className="article__versions-btn" style={styles.editIcon}>редактировать статью</Link>
           <button className="article__versions-btn" style={styles.deleteIcon} onClick={handleDelete}>удалить статью</button>
         </div>

@@ -47,9 +47,9 @@ export default function Documents() {
     </div>
 
     <div className="main__deleted-wrap">
-      <button className="main__deleted">
-        <Link to='/archive' className="main__deleted-icon" style={styles.deleteIcon}>Удаленные документы</Link>
-      </button>
+      <Link to='/archive' className="main__deleted">
+        <p className="main__deleted-icon" style={styles.deleteIcon}>Удаленные документы</p>
+      </Link>
     </div>
   </div>
   );
