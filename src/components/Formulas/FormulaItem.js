@@ -8,7 +8,7 @@ export default function FormulaItem({ formula, onEdit }) {
   
   return (
     <li className="formulas-item">
-      <span className="formula-editor__formula-name">Квадрат суммы</span>
+      <span className="formula-editor__formula-name">{formula.title}</span>
       <div className="formulas__formula-wrap">
         <img src={formulaLink} alt="Формула" className="formula_preview"/>
         <button className="edit-formula-btn" onClick={() => onEdit(formula)}>
