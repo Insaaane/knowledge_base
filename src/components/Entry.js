@@ -7,7 +7,7 @@ import { URLS } from "../urls.js";
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const [error, setError] = useState(null);
+
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -31,9 +31,7 @@ export default function Login() {
 
         navigate('/documents');
       })
-      .catch((error) => {
-        // setError(error.message);
-      });
+      .catch(error => console.error("Error login:", error));
   };
 
   return (

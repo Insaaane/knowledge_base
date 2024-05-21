@@ -27,10 +27,10 @@ export default function ArticlesList() {
         setFolderData(data);
       })
       .catch(error => console.error("Error fetching articles:", error));
-  }, [id]);
+  }, []);
 
   if (!folderData) {
-    return <div>Loading</div>;
+    return <div></div>;
   }
 
   return (

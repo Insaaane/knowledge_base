@@ -29,6 +29,7 @@
   line-height: 38px;
 
   margin-bottom: 12px;
+  cursor: pointer;
 }
 
 .art-list__item_info {

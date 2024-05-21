@@ -27,6 +27,11 @@
   font-weight: 400;
 }
 
+.article__options {
+  display: flex;
+  gap: 27px;
+}
+
 .article__versions-btn {
   /* background: url(./img/versions-icon.svg) no-repeat left center; */
   padding-left: 31px;
@@ -45,15 +50,10 @@
   margin: 22px 0 28px 0;
 }
 
-.article__formulas_title-wrap {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 19px;
-}
-
 .article__formulas_title {
   font-size: 40px;
   line-height: 40px;
+  margin-bottom: 19px;
 }
 
 .article__add-formula {
@@ -129,13 +129,19 @@
 .article__comment {
   margin-bottom: 10px;
   display: flex;
-  gap: 14px;
+  justify-content: space-between;
+}
+
+.article__comment-wrap {
+  display: flex;
 }
 
 .article__comment_logo {
   border-radius: 50%;
   width: 47px;
   height: 47px;
+
+  margin-right: 14px;
 }
 
 .article__comment_about {
@@ -147,4 +153,12 @@
 .article__comment_text {
   font-size: 18px;
   line-height: 32px;
+}
+
+.article__comment_options-wrap {
+  margin-top: 10px;
+}
+
+.artilce__comment-edit-btn {
+  margin-right: 8px;
 }

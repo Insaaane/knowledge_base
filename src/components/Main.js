@@ -16,9 +16,8 @@ export default function Main() {
 		<Routes>
       <Route path='/' element={<Entry/>}/>
       <Route path='/documents' element={<Documents/>}/>
-      <Route path='/article' element={<Article/>}/>
-      {/* <Route path='/articles-list' element={<ArticlesList/>}/> */}
-      <Route path="/articles-list/:id" element={<ArticlesList/>} />
+      <Route path='/article/:id' element={<Article/>}/>
+      <Route path='/articles-list/:id' element={<ArticlesList/>} />
       <Route path='/versions' element={<Versions/>}/>
       <Route path='/archive' element={<Archive/>}/>
       <Route path='/article-editor' element={<ArticleEditor/>}/>

@@ -13,7 +13,7 @@ const styles = {
 export default function ArticleItem({ article }) {
   return (
     <li className="art-list__item" style={styles.versionPointIcon}>
-      <Link to='/article'>
+      <Link to={`/article/${article.id}`}>
         <h2 className="art-list__art-title">{article.title}</h2>
       </Link>
       <div className="art-list__item_info">

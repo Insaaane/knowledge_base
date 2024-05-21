@@ -1,7 +1,7 @@
 import "/src/css/Documents.css";
 import React, { useEffect, useState } from "react";
 import SearchIcon from "/markup/img/search-icon.svg";
-import DeleteIcon from "/markup/img/delete-icon.svg";
+import DeleteIcon from "/markup/img/archive-icon.svg";
 import { Link } from "react-router-dom";
 import Folder from "./Folder.js";
 import { URLS } from "/src/urls.js";
@@ -31,6 +31,10 @@ export default function Documents() {
       .catch(error => console.error("Error fetching folders:", error));
   }, []);
 
+  const handleDelete = (folderId) => {
+    setFolders(folders.filter(folder => folder.id !== folderId));
+  };
+
   return (
   <div className="main">
     <h1 className="main__title title">Документы</h1>
@@ -38,7 +42,7 @@ export default function Documents() {
 
     <div className="main__cards">
       {folders.map(folder => (
-        <Folder key={folder.id} id={folder.id} title={folder.title} />
+        <Folder key={folder.id} folder={folder} onDelete={handleDelete}/>
       ))}
     </div>
 

@@ -39,6 +39,7 @@
   box-shadow: 0px 2px 16px 0px rgba(20, 25, 26, 0.08);
   cursor: pointer;
 
+  position: relative;
 }
 
 .main__card-title {
@@ -51,6 +52,12 @@
   color: #FFF;
 
   max-width: 235px;
+}
+
+.main__card_delete-btn {
+  position: absolute;
+  right: 16px;
+  top: 16px;
 }
 
 .main__deleted-wrap {
