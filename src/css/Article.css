@@ -67,15 +67,11 @@
   display: flex;
   gap: 18px;
   align-items: center;
-
+  
   font-size: 28px;
   line-height: 32px;
 
   margin-bottom: 12px;
-}
-
-.article__formula_name::before {
-  content: "- ";
 }
 
 .article__formula_edit-btn {

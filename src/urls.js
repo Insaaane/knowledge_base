@@ -1,4 +1,4 @@
-const SERVER = "http://127.0.0.1:8000";
+const SERVER = "http://127.0.0.1:8000"; // https://management-system-production.up.railway.app
 
 const URLS = {
   login: `${SERVER}/api/login/token/`,

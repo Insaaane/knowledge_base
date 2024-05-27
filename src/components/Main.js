@@ -21,6 +21,7 @@ export default function Main() {
       <Route path='/versions/:id' element={<Versions/>}/>
       <Route path='/archive' element={<Archive/>}/>
       <Route path='/article-editor' element={<ArticleEditor/>}/>
+      <Route path='/article-editor/:id' element={<ArticleEditor/>}/>
       <Route path='/formulas' element={<Formulas/>}/>
     </Routes>
 	</main>

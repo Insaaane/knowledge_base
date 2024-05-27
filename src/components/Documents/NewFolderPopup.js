@@ -34,6 +34,7 @@ export default function NewFolderPopup({ isVisible, onClose, onAddFolder }) {
     })
     .then(createdFolder => {
       onAddFolder(createdFolder);
+      setTitle("");
       onClose();
     })
     .catch(error => console.error('Ошибка создания папки:', error));

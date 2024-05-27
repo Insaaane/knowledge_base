@@ -1,7 +1,7 @@
 import '/src/css/ArticlesList.css';
 import React, { useState, useEffect } from 'react';
-
 import { Link, useParams } from 'react-router-dom';
+
 import { URLS } from "/src/urls.js";
 import { fetchWithAuth } from "/src/auth.js";
 
@@ -46,7 +46,7 @@ export default function ArticlesList() {
 
       <h1 className="art-list__title title">Статьи блока «{folderData.title}»</h1>
 
-      <Link to='/article-editor'>
+      <Link to='/article-editor' state={{ folderID: id }}>
         <button className="art-list__add-article-btn" style={styles.addIcon}>добавить статью</button>
       </Link>
 

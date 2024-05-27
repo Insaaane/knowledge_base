@@ -50,6 +50,14 @@
   line-height: 32px;
 }
 
+.art-editor__add-link {
+  border-radius: 6px;
+  background: #F6F6F6;
+  font-size: 16px;
+  padding: 9px 17px;
+  min-width: 270px;
+}
+
 .art-editor__doc-label {
   font-weight: 400;
   padding-right: 32px;
@@ -153,5 +161,63 @@
   padding-bottom: 11px;
 
   border-radius: 10px;
+  background: #D9D9D9;
+}
+
+
+.art-editor__access {
+  margin-bottom: 24px;
+}
+
+.art-editor__optional_title {
+  font-size: 32px;
+  line-height: 38px;
+  margin-bottom: 15px;
+}
+
+.art-editor__checkboxes {
+  display: flex;
+  gap: 36px;
+}
+
+.art-editor__checkbox_label {
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.art-editor__checkbox_label-wrap {
+  display: flex;
+  gap: 9px;
+}
+
+.art-editor__changes {
+  margin-bottom: 50px;
+}
+
+.art-editor__changes-input {
+  width: 100%;
+  min-height: 152px;
+  padding: 15px 16px;
+  border-radius: 14px;
+  background: #F6F6F6;
+  resize: vertical;
+  font-size: 16px;
+}
+
+.art-editor__buttons-wrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.art-editor__btn {
+  width: 140px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #D9D9D9;
+  background: #FFF;
+}
+
+.art-editor__btn.save {
   background: #D9D9D9;
 }

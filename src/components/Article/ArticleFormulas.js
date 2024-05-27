@@ -4,6 +4,7 @@ import React from 'react';
 
 import ArticleFormulasItem from './ArticleFormulaItem.js';
 import FormulaEditor from "../Formulas/FormulaEditor.js";
+import ArticleFormulasSelect from "./ArticleFormulasSelect.js"
 
 import AddIcon from "/markup/img/add-icon.svg";
 import SelectIcon from "/markup/img/select-btn-icon.svg";
@@ -17,17 +18,17 @@ const styles = {
   }
 };
 
-export default function ArticleFormulas({ showButtons }) {
+export default function ArticleFormulas({ showButtons, formulas }) {
 
   return (
     <div className="article__formulas">
       <h2 className="article__formulas_title">Список используемых формул</h2>
 
       <ul className="article__formulas-list">
-            
-        <ArticleFormulasItem/>
-        <ArticleFormulasItem/>
-        <ArticleFormulasItem/>
+        
+        {formulas.map((formula) => (
+          <ArticleFormulasItem key={formula.id} formula={formula} showButtons={showButtons}/>
+        ))}
 
       </ul>
 
@@ -37,17 +38,13 @@ export default function ArticleFormulas({ showButtons }) {
 
           <span className="art-editor__or">или</span>
 
-          <select name="" id="" className="art-editor__select-formula" style={styles.selectIcon}>
-            <option value="none" className="art-editor__select-item" defaultValue>добавить имеющуюся формулу</option>
-            <option value="Formula 1" className="art-editor__select-item">Formula 1</option>
-            <option value="Formula 2" className="art-editor__select-item">Formula 2</option>
-            <option value="Formula 3" className="art-editor__select-item">Formula 3</option>
-          </select>
+          <ArticleFormulasSelect/>
         </div>
       }
 
-      {showButtons && <FormulaEditor/>}
+      {/* {showButtons && <FormulaEditor/>} */}
 
+      
     </div>
   )
 }

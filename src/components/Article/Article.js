@@ -74,7 +74,7 @@ export default function Article() {
 
         <div className='article__options'>
           <Link to={`/versions/${article.versionID}`} className="article__versions-btn" style={styles.versionsIcon}>история версий</Link>
-          <Link to='/article-editor' className="article__versions-btn" style={styles.editIcon}>редактировать статью</Link>
+          <Link to={`/article-editor/${article.id}`} className="article__versions-btn" style={styles.editIcon}>редактировать статью</Link>
           <button className="article__versions-btn" style={styles.deleteIcon} onClick={handleDelete}>удалить статью</button>
         </div>
       </div>
@@ -83,7 +83,7 @@ export default function Article() {
 
       <p className="article__info_label">Документ: <a href={arguments.material_link} className="article__label_text">*ссылка на документ*</a></p>
 
-      <ArticleFormulas showButtons={false}/>
+      <ArticleFormulas showButtons={false} formulas={article.formula_ids}/>
 
       <Comments/>
 
