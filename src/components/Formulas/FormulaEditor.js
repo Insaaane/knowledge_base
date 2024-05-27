@@ -158,6 +158,116 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
         </div>
         
       </div>
+
+      <div className="formula__syntax_small">
+        <div className="formula__syntax_small-wrap">
+          <div>
+            <h4 className="syntax__desc-title">Градусы (символ)</h4>
+
+            <div className="formula__syntax_description">
+              
+              <div className="syntax__desc-item">
+                <div className="syntax__item-wrap">
+                  <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\degree" alt="Описание ввода"/>
+                  <span className="syntax__desc-text">\degree</span>
+                </div>
+              </div>
+              <div className="syntax__desc-item">
+                <div className="syntax__item-wrap">
+                  <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;15\degree" alt="Описание ввода"/>
+                  <span className="syntax__desc-text">15\degree</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div>
+            <h4 className="syntax__desc-title">Число Пи</h4>
+
+            <div className="formula__syntax_description">
+              
+              <div className="syntax__desc-item">
+                <div className="syntax__item-wrap">
+                  <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\pi" alt="Описание ввода"/>
+                  <span className="syntax__desc-text">\pi</span>
+                </div>
+              </div>
+              <div className="syntax__desc-item">
+                <div className="syntax__item-wrap">
+                  <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\Pi" alt="Описание ввода"/>
+                  <span className="syntax__desc-text">\Pi</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+        <h4 className="syntax__desc-title">Угол</h4>
+
+        <div className="formula__syntax_description">
+          
+          <div className="syntax__desc-item">
+            <div className="syntax__item-wrap">
+              <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\angle" alt="Описание ввода"/>
+              <span className="syntax__desc-text">\angle</span>
+            </div>
+          </div>
+          <div className="syntax__desc-item">
+            <div className="syntax__item-wrap">
+              <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\angle \alpha" alt="Описание ввода"/>
+              <span className="syntax__desc-text">\angle \alpha</span>
+            </div>
+          </div>
+
+        </div>
+
+        <h4 className="syntax__desc-title">Альфа, бета</h4>
+
+        <div className="formula__syntax_description">
+          
+          <div className="syntax__desc-item">
+            <div className="syntax__item-wrap">
+              <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\alpha" alt="Описание ввода"/>
+              <span className="syntax__desc-text">\alpha</span>
+            </div>
+          </div>
+          <div className="syntax__desc-item">
+            <div className="syntax__item-wrap">
+              <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\beta" alt="Описание ввода"/>
+              <span className="syntax__desc-text">\beta</span>
+            </div>
+          </div>
+          <div className="syntax__desc-item">
+            <div className="syntax__item-wrap">
+              <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\gamma" alt="Описание ввода"/>
+              <span className="syntax__desc-text">\gamma</span>
+            </div>
+          </div>
+
+        </div>
+
+        <h4 className="syntax__desc-title">Цвет</h4>
+
+        <div className="formula__syntax_description">
+          
+          <div className="syntax__desc-item">
+            <div className="syntax__item-wrap">
+              <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\color{blue}AaBb123" alt="Описание ввода"/>
+              <span className="syntax__desc-text">\color{"{blue}"}AaBb123</span>
+            </div>
+          </div>
+          <div className="syntax__desc-item">
+            <div className="syntax__item-wrap">
+              <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\colorbox{red}{Black on red}" alt="Описание ввода"/>
+              <span className="syntax__desc-text">\colorbox{"{red}{Black on red}"}</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </div>
 
     <div className="formula__syntax">
@@ -175,20 +285,20 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
         </div>
         <div className="syntax__desc-item">
           <div className="syntax__item-wrap">
-            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\sqrt{x}" alt="Описание ввода"/>
-            <span className="syntax__desc-text">\sqrt{"{x}"}</span>
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\sqrt[3]{x}" alt="Описание ввода"/>
+            <span className="syntax__desc-text">\sqrt[3]{"{x}"}</span>
           </div>
         </div>
         <div className="syntax__desc-item">
           <div className="syntax__item-wrap">
-            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\sqrt{x}" alt="Описание ввода"/>
-            <span className="syntax__desc-text">\sqrt{"{x}"}</span>
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\surd{24}" alt="Описание ввода"/>
+            <span className="syntax__desc-text">\surd{"{24}"}</span>
           </div>
         </div>
         <div className="syntax__desc-item">
           <div className="syntax__item-wrap">
-            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\sqrt{x}" alt="Описание ввода"/>
-            <span className="syntax__desc-text">\sqrt{"{x}"}</span>
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\sqrt{\dfrac{3}{4}}" alt="Описание ввода"/>
+            <span className="syntax__desc-text">\sqrt{"{\dfrac{3}{4}}"}</span>
           </div>
         </div>
 
@@ -200,20 +310,108 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
         
         <div className="syntax__desc-item">
           <div className="syntax__item-wrap">
-            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\sqrt{x}" alt="Описание ввода"/>
-            <span className="syntax__desc-text">\sqrt{"{x}"}</span>
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;x^2" alt="Описание ввода"/>
+            <span className="syntax__desc-text">x^2</span>
           </div>
         </div>
         <div className="syntax__desc-item">
           <div className="syntax__item-wrap">
-            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\sqrt{x}" alt="Описание ввода"/>
-            <span className="syntax__desc-text">\sqrt{"{x}"}</span>
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;10^4" alt="Описание ввода"/>
+            <span className="syntax__desc-text">10^4</span>
           </div>
         </div>
         <div className="syntax__desc-item">
           <div className="syntax__item-wrap">
-            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\sqrt{x}" alt="Описание ввода"/>
-            <span className="syntax__desc-text">\sqrt{"{x}"}</span>
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;10^{24}" alt="Описание ввода"/>
+            <span className="syntax__desc-text">10^{"{24}"}</span>
+          </div>
+        </div>
+
+      </div>
+
+      <h4 className="syntax__desc-title">Дроби</h4>
+
+      <div className="formula__syntax_description">
+        
+        <div className="syntax__desc-item">
+          <div className="syntax__item-wrap">
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\dfrac{3}{4}" alt="Описание ввода"/>
+            <span className="syntax__desc-text">\dfrac{"{3}{4}"}</span>
+          </div>
+        </div>
+        <div className="syntax__desc-item">
+          <div className="syntax__item-wrap">
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\dfrac{a + b}{2}" alt="Описание ввода"/>
+            <span className="syntax__desc-text">\dfrac{"{a + b}{2}"}</span>
+          </div>
+        </div>
+
+      </div>
+
+      <h4 className="syntax__desc-title">Подстрочные символы</h4>
+
+      <div className="formula__syntax_description">
+        
+        <div className="syntax__desc-item">
+          <div className="syntax__item-wrap">
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;x_i" alt="Описание ввода"/>
+            <span className="syntax__desc-text">x_i</span>
+          </div>
+        </div>
+        <div className="syntax__desc-item">
+          <div className="syntax__item-wrap">
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;x_a" alt="Описание ввода"/>
+            <span className="syntax__desc-text">x_a</span>
+          </div>
+        </div>
+        <div className="syntax__desc-item">
+          <div className="syntax__item-wrap">
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;x_{ab}" alt="Описание ввода"/>
+            <span className="syntax__desc-text">x_{"{ab}"}</span>
+          </div>
+        </div>
+        <div className="syntax__desc-item">
+          <div className="syntax__item-wrap">
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;S_\text{all}" alt="Описание ввода"/>
+            <span className="syntax__desc-text">S_\text{"{all}"}</span>
+          </div>
+        </div>
+
+      </div>
+
+      <h4 className="syntax__desc-title">Умножение (точка)</h4>
+
+      <div className="formula__syntax_description">
+        
+        <div className="syntax__desc-item">
+          <div className="syntax__item-wrap">
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\cdot" alt="Описание ввода"/>
+            <span className="syntax__desc-text">\cdot</span>
+          </div>
+        </div>
+        <div className="syntax__desc-item">
+          <div className="syntax__item-wrap">
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;a \cdot b" alt="Описание ввода"/>
+            <span className="syntax__desc-text">a \cdot b</span>
+          </div>
+        </div>
+
+      </div>
+
+      <h4 className="syntax__desc-title">Скобка снизу</h4>
+
+      <div className="formula__syntax_description">
+        
+        <div className="syntax__desc-item">
+          <div className="syntax__item-wrap">
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;n^x=\underbrace{n\cdot n \cdot ...\cdot n}_{x\text{ times}}" alt="Описание ввода"/>
+            <span className="syntax__desc-text">n^x=\underbrace{"{n\\cdot n \\cdot ...\\cdot n}_{x\\text{ times}}"}</span>
+          </div>
+        </div>
+        <div className="syntax__desc-item">
+          <div className="syntax__item-wrap">
+            <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\underbrace{x+...+x}_{n\text{ times}}" alt="Описание ввода"/>
+            <span className="syntax__desc-text">\underbrace{"{x+...+x}_{n\\text{ times}}"}</span>
           </div>
         </div>
 

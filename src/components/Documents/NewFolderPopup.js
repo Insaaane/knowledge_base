@@ -1,5 +1,5 @@
 import "/src/css/Documents.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { URLS } from "/src/urls.js";
 import { fetchWithAuth } from "/src/auth.js";

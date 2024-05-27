@@ -93,14 +93,13 @@ export default function Formulas() {
         добавить новую формулу
       </button>   
 
-      {isEditorOpen && 
-        <FormulaEditor 
+      <FormulaEditor 
           formula={selectedFormula} 
           onDelete={handleDeleteFormula}
           onCancel={handleCancel}
           onSave={handleSaveFormula}
           onUpdate={handleUpdateFormula}
-        />} 
+        />
     </div>
   )
 }
