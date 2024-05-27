@@ -35,11 +35,13 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
     setTitle(evt.target.value);
   };
 
-  const URL = `${URLS.formulas}${formula.id}/`;
+  
 
   const handleDelete = () => {
     if (!formula || !formula.id) return;
 
+    const URL = `${URLS.formulas}${formula.id}/`;
+    
     fetchWithAuth(URL, {
       method: 'DELETE',
     })
@@ -57,6 +59,8 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
 
     if (!formula || !formula.id) return;
 
+    const URL = `${URLS.formulas}${formula.id}/`;
+  
     const updatedFormula = {
       title,
       formula: formulaText,

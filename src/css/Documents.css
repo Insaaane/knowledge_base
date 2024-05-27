@@ -80,3 +80,71 @@
   padding-left: 32px;
   color: #FFF;
 }
+
+/* Popup - start */
+
+.new-folder__content {
+  position: relative;
+  padding: 47px 38px;
+  border-radius: 25px;
+  background: #FFF;
+  /* background-image: url(./img/popup-bg.png); */
+  width: 776px;
+  height: 450px;
+}
+
+.new-folder__close {
+  position: absolute;
+  top: 39px;
+  right: 44px;
+  cursor: pointer;
+}
+
+.new-folder__title {
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 40px;
+}
+
+.new-folder__form {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.new-folder__input-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-folder__label {
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.new-folder__input {
+  width: 500px;
+  padding: 16px 30px;
+  background: #F6F6F6;
+  border-radius: 14px;
+}
+
+.new-folder__buttons-wrap {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 140px;
+}
+
+.new-folder__btn {
+  width: 140px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #D9D9D9;
+  background: #FFF;
+}
+
+.new-folder__btn.save {
+  background: #D9D9D9;
+}
+
+/* Popup - end */
