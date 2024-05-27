@@ -1,14 +1,16 @@
-import React from 'react';
 import '/src/css/ArticlesList.css';
-import VersionPointIcon from "/markup/img/version-point-icon.svg";
+import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { formatDate } from '/src/util.js';
+
+import VersionPointIcon from "/markup/img/version-point-icon.svg";
 
 const styles = {
   versionPointIcon: {
     background: `url(${VersionPointIcon}) no-repeat left 6px`
   }
-}
+};
 
 export default function ArticleItem({ article }) {
   return (

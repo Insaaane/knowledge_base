@@ -1,11 +1,14 @@
 import "/src/css/Documents.css";
 import React, { useEffect, useState } from "react";
-import SearchIcon from "/markup/img/search-icon.svg";
-import DeleteIcon from "/markup/img/archive-icon.svg";
+
 import { Link } from "react-router-dom";
-import Folder from "./Folder.js";
 import { URLS } from "/src/urls.js";
 import { fetchWithAuth } from "/src/auth.js";
+
+import Folder from "./Folder.js";
+
+import SearchIcon from "/markup/img/search-icon.svg";
+import DeleteIcon from "/markup/img/archive-icon.svg";
 
 const styles = {
   searchIcon: {
@@ -23,12 +26,12 @@ export default function Documents() {
     fetchWithAuth(URLS.folders)
       .then(response => {
         if (!response.ok) {
-          throw new Error('Ошибка');
+          throw new Error('Network response was not ok');
         }
         return response.json();
       })
       .then(data => setFolders(data))
-      .catch(error => console.error("Error fetching folders:", error));
+      .catch(error => console.error('Ошибка получения папок:', error));
   }, []);
 
   const handleDelete = (folderId) => {

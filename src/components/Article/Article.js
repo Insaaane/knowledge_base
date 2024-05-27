@@ -1,26 +1,21 @@
-import React, { useEffect, useState } from 'react';
 import '/src/css/Article.css';
-import VersionsIcon from "/markup/img/versions-icon.svg";
-import AddFormulaIcon from "/markup/img/add-icon.svg";
-import EditIcon from "/markup/img/edit-icon.svg";
-import DeleteIcon from "/markup/img/delete-icon.svg";
-import SendMessageIcon from "/markup/img/send-message-icon.svg";
+import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import ArticleFormulas from './ArticleFormulas.js';
-import Comments from './Comments.js';
+
 import { URLS } from "/src/urls.js";
 import { fetchWithAuth } from "/src/auth.js";
 import { formatDate } from '/src/util.js';
 
+import ArticleFormulas from './ArticleFormulas.js';
+import Comments from './Comments.js';
+
+import VersionsIcon from "/markup/img/versions-icon.svg";
+import EditIcon from "/markup/img/edit-icon.svg";
+import DeleteIcon from "/markup/img/delete-icon.svg";
+
 const styles = {
   versionsIcon: {
     background: `url(${VersionsIcon}) no-repeat left center`
-  },
-  addFormulaIcon: {
-    background: `url(${AddFormulaIcon}) no-repeat left 10px`
-  },
-  sendMessageIcon: {
-    background: `url(${SendMessageIcon}) no-repeat right center`
   },
   editIcon: {
     background: `url(${EditIcon}) no-repeat left center`
@@ -36,10 +31,10 @@ export default function Article() {
 
   const [article, setArticle] = useState(null);
 
-  const url = `${URLS.articles}${id}/`
+  const URL = `${URLS.articles}${id}/`;
 
   useEffect(() => {
-    fetchWithAuth(url)
+    fetchWithAuth(URL)
       .then(response => {
         if (!response.ok) {
           throw new Error('Ошибка');
@@ -51,7 +46,7 @@ export default function Article() {
   }, []);
 
   const handleDelete = () => {
-    fetchWithAuth(url, {
+    fetchWithAuth(URL, {
       method: 'DELETE',
     })
     .then(response => {
@@ -88,7 +83,7 @@ export default function Article() {
 
       <p className="article__info_label">Документ: <a href={arguments.material_link} className="article__label_text">*ссылка на документ*</a></p>
 
-      <ArticleFormulas/>
+      <ArticleFormulas showButtons={false}/>
 
       <Comments/>
 

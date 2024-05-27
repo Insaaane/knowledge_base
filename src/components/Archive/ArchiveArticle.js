@@ -1,9 +1,11 @@
-import React from 'react';
 import '/src/css/Archive.css';
-import VersionPointIcon from "/markup/img/version-point-icon.svg";
-import RestoreIcon from "/markup/img/restore-icon.svg";
+import React from 'react';
 
 import { formatDate } from '/src/util.js';
+
+import VersionPointIcon from '/markup/img/version-point-icon.svg';
+import RestoreIcon from '/markup/img/restore-icon.svg';
+
 
 const styles = {
   versionPointIcon: {
@@ -12,7 +14,7 @@ const styles = {
   restoreIcon: {
     background: `url(${RestoreIcon}) no-repeat right center`
   }
-}
+};
 
 export default function ArchiveArticle({ title, author, date }) {
   return (

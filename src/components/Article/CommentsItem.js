@@ -1,5 +1,6 @@
-import React from 'react';
 import '/src/css/Article.css';
+import React from 'react';
+
 import Avatar from "/markup/img/avatar-circle.png";
 import EditIcon from "/markup/img/edit-icon.svg";
 import DeleteIcon from "/markup/img/delete-icon.svg";

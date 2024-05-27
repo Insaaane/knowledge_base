@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from 'react';
 import '/src/css/Versions.css';
-import VersionsItem from "./VersionsItem.js";
+import React, { useEffect, useState } from 'react';
+
 import { URLS } from "/src/urls.js";
 import { fetchWithAuth } from "/src/auth.js";
 import { useParams } from 'react-router-dom';
+
+import VersionsItem from "./VersionsItem.js";
 
 export default function Versions() {
   const [versions, setVersions] = useState([]);
   const { id } = useParams();
 
+  const URL = `${URLS.versions}${id}/`;
+
   useEffect(() => {
-    fetchWithAuth(`${URLS.versions}${id}/`)
+    fetchWithAuth(URL)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -18,7 +22,7 @@ export default function Versions() {
       return response.json();
     })
     .then(data => setVersions(data))
-    .catch(error => console.error("Error fetching articles:", error));
+    .catch(error => console.error('Ошибка получения статей:', error));
   }, []);
 
   return (
@@ -29,14 +33,14 @@ export default function Versions() {
       <ul className="versions__list">
 
         {versions.slice(0).reverse().map((version, index, array) => (
-            <VersionsItem 
-              key={version.id}
-              author={version.authorID}
-              date={version.creation_date}
-              changes={version.changed}
-              index={index}
-              array={array}
-            />
+          <VersionsItem 
+            key={version.id}
+            author={version.authorID}
+            date={version.creation_date}
+            changes={version.changed}
+            index={index}
+            array={array}
+          />
         ))}
 
       </ul>

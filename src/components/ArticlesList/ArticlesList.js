@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
 import '/src/css/ArticlesList.css';
-import AddIcon from "/markup/img/add-icon.svg";
-import VersionPointIcon from "/markup/img/version-point-icon.svg";
+import React, { useState, useEffect } from 'react';
+
 import { Link, useParams } from 'react-router-dom';
-import ArticleItem from './ArticleItem';
 import { URLS } from "/src/urls.js";
 import { fetchWithAuth } from "/src/auth.js";
+
+import ArticleItem from './ArticleItem';
+
+import AddIcon from "/markup/img/add-icon.svg";
+import VersionPointIcon from "/markup/img/version-point-icon.svg";
 
 const styles = {
   addIcon: {
@@ -14,19 +17,24 @@ const styles = {
   versionPointIcon: {
     background: `url(${VersionPointIcon}) no-repeat left 6px`
   }
-}
+};
 
 export default function ArticlesList() {
   const { id } = useParams();
   const [folderData, setFolderData] = useState(null);
 
+  const URL = `${URLS.folders}${id}/`;
+
   useEffect(() => {
-    fetchWithAuth(`${URLS.folders}${id}/`)
-      .then(response => response.json())
-      .then(data => {
-        setFolderData(data);
+    fetchWithAuth(URL)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
       })
-      .catch(error => console.error("Error fetching articles:", error));
+      .then(data => setFolderData(data))
+      .catch(error => console.error('Ошибка при получении статей:', error));
   }, []);
 
   if (!folderData) {

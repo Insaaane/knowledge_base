@@ -1,5 +1,6 @@
-import React from 'react';
 import '/src/css/Article.css';
+import React from 'react';
+
 import SendMessageIcon from "/markup/img/send-message-icon.svg";
 import CommentsItem from './CommentsItem.js';
 

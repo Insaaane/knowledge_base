@@ -1,7 +1,9 @@
-import React from 'react';
 import "/src/css/FormulaEditor.css";
-import EditIcon from "/markup/img/edit-icon.svg";
+import React from 'react';
+
 import { URLS } from '/src/urls.js';
+
+import EditIcon from "/markup/img/edit-icon.svg";
 
 export default function FormulaItem({ formula, onEdit }) {
   const formulaLink = `${URLS.formulaImg}${formula.formula}`;

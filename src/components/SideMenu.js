@@ -1,7 +1,7 @@
+import '../css/SideMenu.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../css/SideMenu.css';
 import SideLogo from "/markup/img/logo-sidenav.svg";
 import AccountIcon from "/markup/img/account-icon.svg";
 

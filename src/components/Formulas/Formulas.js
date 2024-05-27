@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
 import "/src/css/FormulaEditor.css";
-import SearchIcon from "/markup/img/search-icon.svg";
-import AddIcon from "/markup/img/add-icon.svg";
+import React, { useEffect, useState } from 'react';
+
 import FormulaItem from './FormulaItem.js';
 import FormulaEditor from './FormulaEditor.js';
+
 import { URLS } from "/src/urls.js";
 import { fetchWithAuth } from "/src/auth.js";
+
+import SearchIcon from "/markup/img/search-icon.svg";
+import AddIcon from "/markup/img/add-icon.svg";
 
 const styles = {
   searchIcon: {
@@ -14,7 +17,7 @@ const styles = {
   addIcon: {
     background: `url(${AddIcon}) no-repeat left 6px`
   }
-}
+};
 
 export default function Formulas() {
   const [formulas, setFormulas] = useState([]);
@@ -25,12 +28,12 @@ export default function Formulas() {
     fetchWithAuth(URLS.formulas)
       .then(response => {
         if (!response.ok) {
-          throw new Error('Ошибка');
+          throw new Error('Network response was not ok');
         }
         return response.json();
       })
       .then(data => setFormulas(data))
-      .catch(error => console.error("Error fetching formulas:", error));
+      .catch(error => console.error('Ошибка при получении формул:', error));
   }, []);
 
   const handleAddFormula = () => {

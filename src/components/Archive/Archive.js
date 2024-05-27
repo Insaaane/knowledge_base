@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
 import '/src/css/Archive.css';
+import React, { useEffect, useState } from 'react';
+
+import { URLS } from '/src/urls.js';
+import { fetchWithAuth } from '/src/auth.js';
+
 import ArchiveArticle from './ArchiveArticle.js';
-import { URLS } from "/src/urls.js";
-import { fetchWithAuth } from "/src/auth.js";
 
 export default function Archive() {
   const [articles, setArticles] = useState([]);
@@ -16,7 +18,7 @@ export default function Archive() {
       return response.json();
     })
     .then(data => setArticles(data))
-    .catch(error => console.error("Error fetching articles:", error));
+    .catch(error => console.error('Ошибка при получении статей:', error));
   }, []);
 
   return (
@@ -26,14 +28,14 @@ export default function Archive() {
 
       <ul className="archive__list">
         
-      {articles.map(article => (
+        {articles.map(article => (
           <ArchiveArticle
             key={article.id}
             title={article.title}
             author={article.authorID}
             date={article.creation_date}
           />
-      ))}
+        ))}
 
       </ul>
 

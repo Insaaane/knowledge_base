@@ -1,15 +1,16 @@
-import React from 'react';
 import '/src/css/Versions.css';
-import Avatar from "/markup/img/avatar-circle.png";
-import VersionPoint from "/markup/img/version-point-icon.svg";
+import React from 'react';
 
 import { formatDate } from '/src/util.js';
+
+import Avatar from "/markup/img/avatar-circle.png";
+import VersionPoint from "/markup/img/version-point-icon.svg";
 
 const styles = {
   versionPoint: {
     background: `url(${VersionPoint}) no-repeat left top`
   }
-}
+};
 
 function Changes({ changes }) {
   if (changes == null) {

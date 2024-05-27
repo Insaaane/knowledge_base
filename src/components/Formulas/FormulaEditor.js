@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
 import "/src/css/FormulaEditor.css";
-import CheckIcon from "/markup/img/check-icon.svg";
+import React, { useState, useEffect } from 'react';
+
 import { URLS } from '/src/urls.js';
 import { fetchWithAuth } from '/src/auth.js';
+
+import CheckIcon from "/markup/img/check-icon.svg";
 
 const styles = {
   checkIcon: {
     background: `url(${CheckIcon}) no-repeat right center`
   }
-}
+};
 
 export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onUpdate }) {
   const [title, setTitle] = useState(formula ? formula.title : "");
@@ -33,78 +35,70 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
     setTitle(evt.target.value);
   };
 
+  const URL = `${URLS.formulas}${formula.id}/`;
+
   const handleDelete = () => {
     if (!formula || !formula.id) return;
 
-    const url = `${URLS.formulas}${formula.id}/`;
-
-    fetchWithAuth(url, {
+    fetchWithAuth(URL, {
       method: 'DELETE',
     })
     .then(response => {
       if (!response.ok) {
-        throw new Error('Ошибка при удалении формулы');
+        throw new Error('Network response was not ok');
       }
-      // Вызов внешней функции onDelete для обновления списка формул
       onDelete(formula.id);
     })
-    .catch(error => {
-      console.error("Error deleting formula:", error);
-    });
+    .catch(error => console.error('Ошибка при удалении формулы:', error));
   };
 
   const handleUpdate = (evt) => {
     evt.preventDefault();
+
     if (!formula || !formula.id) return;
 
-    const url = `${URLS.formulas}${formula.id}/`;
     const updatedFormula = {
       title,
       formula: formulaText,
     };
 
-    fetchWithAuth(url, {
+    fetchWithAuth(URL, {
       method: 'PUT',
       body: JSON.stringify(updatedFormula),
     })
     .then(response => {
       if (!response.ok) {
-        throw new Error('Ошибка при обновлении формулы');
+        throw new Error('Network response was not ok');
       }
       return response.json();
     })
-    .then(data => {
-      onUpdate(data);  // Вызов внешней функции onUpdate для обновления списка формул
-    })
-    .catch(error => {
-      console.error("Error updating formula:", error);
-    });
+    .then(data => onUpdate(data))
+    .catch(error => console.error('Ошибка при обновлении формулы:', error));
   };
 
   const handleSave = (evt) => {
     evt.preventDefault();
     
-    const url = URLS.formulas;
     const newFormula = {
       title,
       formula: formulaText,
     };
 
-    fetchWithAuth(url, {
+    fetchWithAuth(URLS.formulas, {
       method: 'POST',
       body: JSON.stringify(newFormula),
     })
     .then(response => {
       if (!response.ok) {
-        throw new Error('Ошибка при создании формулы');
+        throw new Error('Network response was not ok');
       }
       return response.json();
     })
     .then(data => {
-      onSave(data);  // Вызов внешней функции onSave для обновления списка формул
+      onSave(data); 
     })
     .catch(error => {
-      console.error("Error creating formula:", error);
+      console.error('Ошибка при создании формулы:', error);
     });
   };
 
