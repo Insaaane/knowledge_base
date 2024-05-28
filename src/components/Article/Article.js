@@ -81,7 +81,7 @@ export default function Article() {
 
       <p className="article__text">{article.article}</p>
 
-      <p className="article__info_label">Документ: <a href={arguments.material_link} className="article__label_text">*ссылка на документ*</a></p>
+      <p className="article__info_label">Документ: <a href={article.material_link} className="article__label_text">*ссылка на документ*</a></p>
 
       <ArticleFormulas showButtons={false} formulas={article.formula_ids}/>
 

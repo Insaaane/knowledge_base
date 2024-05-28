@@ -34,10 +34,13 @@ export default function ArticleEditor() {
     article: "",
     material_link: "",
     formula_ids: [],
+    write_only_formula_ids: [],
     access: [],
     changed: "",
     folderID: folderID || ''
   });
+
+  // write_only_formula_ids
 
   const URL = id ? `${URLS.articles}${id}/` : null;
 
@@ -50,7 +53,11 @@ export default function ArticleEditor() {
         }
         return response.json();
       })
-      .then(data => setArticle(data))
+      .then(data => setArticle(prevArticle => ({
+        ...prevArticle,
+        ...data,
+        write_only_formula_ids: data.formula_ids.map(formula => formula.id)
+      })))
       .catch(error => console.error("Error fetching article:", error));
     }
   }, [id]);
@@ -74,6 +81,12 @@ export default function ArticleEditor() {
     const method = id ? 'PUT' : 'POST';
     const requestURL = id ? URL : URLS.articles;
 
+    const dataToSend = {
+      ...article,
+      write_only_formula_ids: article.write_only_formula_ids
+    };
+    delete dataToSend.formula_ids;
+
     fetchWithAuth(requestURL, {
       method,
       body: JSON.stringify(article)
@@ -88,6 +101,22 @@ export default function ArticleEditor() {
     .catch(error => console.error("Error saving article:", error));
   };
 
+  const handleAddFormula = (newFormula) => {
+    setArticle(prevArticle => ({
+      ...prevArticle,
+      formula_ids: [...prevArticle.formula_ids, newFormula],
+      write_only_formula_ids: [...prevArticle.write_only_formula_ids, newFormula.id]
+    }));
+  };
+
+  const handleRemoveFormula = (formulaId) => {
+    setArticle(prevArticle => ({
+      ...prevArticle,
+      formula_ids: prevArticle.formula_ids.filter(formula => formula.id !== formulaId),
+      write_only_formula_ids: prevArticle.write_only_formula_ids.filter(id => id !== formulaId)
+    }));
+  };
+
   return (
     <form className="art-editor" onSubmit={handleSubmit}>
 
@@ -96,7 +125,7 @@ export default function ArticleEditor() {
           name="title" 
           rows="1" 
           className="art-editor__title-input" 
-          placeholder="Название статьи"
+          placeholder="*Введите название статьи*"
           value={article.title || ''}
           onChange={handleChange}
         />
@@ -125,7 +154,12 @@ export default function ArticleEditor() {
 
       </div>
       
-      <ArticleFormulas showButtons={true} formulas={article.formula_ids}/>
+      <ArticleFormulas 
+        showButtons={true} 
+        formulas={article.formula_ids} 
+        onAddFormula={handleAddFormula} 
+        onRemoveFormula={handleRemoveFormula}
+      />
 
       <div className='art-editor__access'>
         <h3 className='art-editor__optional_title'>Права доступа</h3>

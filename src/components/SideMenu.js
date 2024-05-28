@@ -14,9 +14,9 @@ export default function SideMenu() {
 			<li className="sidenav__menu-item">
 				<Link to='/documents'>Главная</Link>
 			</li>
-			<li className="sidenav__menu-item">
+			{/* <li className="sidenav__menu-item">
 				<Link to='/'>Конструктор моделей</Link>
-			</li>
+			</li> */}
 			<li className="sidenav__menu-item">
 				<Link to='/formulas'>Конструктор формул</Link>
 			</li>

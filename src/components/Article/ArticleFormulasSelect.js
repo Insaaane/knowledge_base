@@ -12,8 +12,9 @@ const styles = {
   }
 };
 
-export default function ArticleFormulasSelect({  }) {
+export default function ArticleFormulasSelect({ usedFormulas, onFormulaSelect }) {
   const [formulas, setFormulas] = useState([]);
+  const [selectedFormula, setSelectedFormula] = useState("");
 
   useEffect(() => {
     fetchWithAuth(URLS.formulas)
@@ -27,14 +28,39 @@ export default function ArticleFormulasSelect({  }) {
       .catch(error => console.error('Ошибка при получении формул:', error));
   }, []);
 
-  return (
-    <select name="" className="art-editor__select-formula" style={styles.selectIcon}>
-      <option value="" className="art-editor__select-item" defaultValue>добавить имеющуюся формулу</option>
+  const handleFormulaChange = (evt) => {
+    setSelectedFormula(evt.target.value);
+  };
 
-      {formulas.map(formulaItem => (
-        <option key={formulaItem.id} value={formulaItem.formula} id={formulaItem.id} className="art-editor__select-item">{formulaItem.title}</option>
-      ))}
-      
-    </select>
+  const handleAddFormula = (evt) => {
+    evt.preventDefault();
+
+    const selected = formulas.find(formula => formula.formula === selectedFormula);
+    if (selected) {
+      onFormulaSelect(selected);
+      setSelectedFormula("");
+    }
+  };
+
+  const filteredFormulas = formulas.filter(formula => !usedFormulas.some(usedFormula => usedFormula.id === formula.id));
+
+  return (
+    <>
+      <select 
+          name="" 
+          className="art-editor__select-formula" 
+          style={styles.selectIcon}
+          value={selectedFormula}
+          onChange={handleFormulaChange}
+        >
+        <option value="" className="art-editor__select-item" defaultValue>добавить имеющуюся формулу</option>
+
+        {filteredFormulas.map(formulaItem => (
+          <option key={formulaItem.id} value={formulaItem.formula} id={formulaItem.id} className="art-editor__select-item">{formulaItem.title}</option>
+        ))}
+        
+      </select>
+      <button className="art-editor__add-formula-btn" onClick={handleAddFormula}>Добавить</button>
+    </>
   )
 }

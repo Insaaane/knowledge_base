@@ -35,7 +35,7 @@ export default function Versions() {
         {versions.slice(0).reverse().map((version, index, array) => (
           <VersionsItem 
             key={version.id}
-            author={version.authorID}
+            author={version.author}
             date={version.creation_date}
             changes={version.changed}
             index={index}

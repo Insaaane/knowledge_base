@@ -12,7 +12,7 @@ const styles = {
   }
 };
 
-export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onUpdate }) {
+export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onUpdate, isArticleEditing }) {
   const [title, setTitle] = useState(formula ? formula.title : "");
   const [formulaText, setFormulaText] = useState(formula ? formula.formula : "");
   const [formulaImgUrl, setFormulaImgUrl] = useState(`${URLS.formulaImg}${formula ? formula.formula : ""}`);
@@ -35,23 +35,25 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
     setTitle(evt.target.value);
   };
 
-  
-
   const handleDelete = () => {
     if (!formula || !formula.id) return;
 
-    const URL = `${URLS.formulas}${formula.id}/`;
-    
-    fetchWithAuth(URL, {
-      method: 'DELETE',
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
+    if (isArticleEditing) {
       onDelete(formula.id);
-    })
-    .catch(error => console.error('Ошибка при удалении формулы:', error));
+    } else {
+      const URL = `${URLS.formulas}${formula.id}/`;
+      
+      fetchWithAuth(URL, {
+        method: 'DELETE',
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        onDelete(formula.id);
+      })
+      .catch(error => console.error('Ошибка при удалении формулы:', error));
+    }
   };
 
   const handleUpdate = (evt) => {
@@ -112,7 +114,7 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
     <div className="formula__container">
     <input
       className="formula__title"
-      placeholder="Название формулы"
+      placeholder="*Введите название формулы*"
       value={title}
       onChange={handleTitleChange}
     />
