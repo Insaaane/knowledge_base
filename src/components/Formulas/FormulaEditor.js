@@ -130,10 +130,10 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
       <img src={formulaImgUrl} alt="Формула"
         className="edit_formula_preview"/>
       
-      <div className="formula__variables">
+      {/* <div className="formula__variables">
         <p className="formula__variables_item">x - первое слагаемое</p>
         <p className="formula__variables_item">y - второе слагаемое</p>
-      </div>
+      </div> */}
 
       <div className="formula__buttons_wrap">
         <button type="button" className="formula__cancel-btn" onClick={onCancel}>
@@ -206,24 +206,44 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
           </div>
         </div>
         
-        <h4 className="syntax__desc-title">Угол</h4>
+        <div className="formula__syntax_small-wrap">
+          <div>
+            <h4 className="syntax__desc-title">Угол</h4>
 
-        <div className="formula__syntax_description">
-          
-          <div className="syntax__desc-item">
-            <div className="syntax__item-wrap">
-              <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\angle" alt="Описание ввода"/>
-              <span className="syntax__desc-text">\angle</span>
+            <div className="formula__syntax_description">
+              
+              <div className="syntax__desc-item">
+                <div className="syntax__item-wrap">
+                  <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\angle" alt="Описание ввода"/>
+                  <span className="syntax__desc-text">\angle</span>
+                </div>
+              </div>
+              <div className="syntax__desc-item">
+                <div className="syntax__item-wrap">
+                  <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\angle \alpha" alt="Описание ввода"/>
+                  <span className="syntax__desc-text">\angle \alpha</span>
+                </div>
+              </div>
+
             </div>
           </div>
-          <div className="syntax__desc-item">
-            <div className="syntax__item-wrap">
-              <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\angle \alpha" alt="Описание ввода"/>
-              <span className="syntax__desc-text">\angle \alpha</span>
+          <div>
+            <h4 className="syntax__desc-title">Сумма</h4>
+
+            <div className="formula__syntax_description">
+              
+              <div className="syntax__desc-item">
+                <div className="syntax__item-wrap">
+                  <img className="syntax__img" src="https://latex.codecogs.com/svg.image?\LARGE&space;\sum_{i=0}^{N}a_i" alt="Описание ввода"/>
+                  <span className="syntax__desc-text">\sum_{"{i=0}^{N}"}a_i</span>
+                </div>
+              </div>
+
             </div>
           </div>
-
         </div>
+        
+        
 
         <h4 className="syntax__desc-title">Альфа, бета</h4>
 
