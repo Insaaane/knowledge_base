@@ -44,6 +44,8 @@
   line-height: 32px;
 
   margin-bottom: 18px;
+
+  white-space: pre-wrap;
 }
 
 .article__formulas {
