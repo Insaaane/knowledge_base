@@ -17,10 +17,6 @@
 	        box-sizing: border-box;
 }
 
-*::placeholder {
-	color: inherit;
-}
-
 /* Links */
 
 a, a:link, a:visited, a:hover {

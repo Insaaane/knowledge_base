@@ -1,6 +1,8 @@
 import "/src/css/FormulaEditor.css";
 import React, { useState, useEffect } from 'react';
 
+import Variables from "./Variables.js";
+
 import { URLS } from '/src/urls.js';
 import { fetchWithAuth } from '../../Auth/auth.js';
 
@@ -16,11 +18,13 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
   const [title, setTitle] = useState(formula ? formula.title : "");
   const [formulaText, setFormulaText] = useState(formula ? formula.formula : "");
   const [formulaImgUrl, setFormulaImgUrl] = useState(`${URLS.formulaImg}${formula ? formula.formula : ""}`);
+  const [variables, setVariables] = useState(formula ? formula.variables : {});
 
   useEffect(() => {
     setTitle(formula ? formula.title : "");
     setFormulaText(formula ? formula.formula : "");
     setFormulaImgUrl(`${URLS.formulaImg}${formula ? formula.formula : ""}`);
+    setVariables(formula ? formula.variables : {});
   }, [formula]);
 
   useEffect(() => {
@@ -33,6 +37,10 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
 
   const handleTitleChange = (evt) => {
     setTitle(evt.target.value);
+  };
+  
+  const handleVariablesChange = (newVariables) => {
+    setVariables(newVariables);
   };
 
   const handleDelete = () => {
@@ -66,6 +74,7 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
     const updatedFormula = {
       title,
       formula: formulaText,
+      variables
     };
 
     fetchWithAuth(URL, {
@@ -88,6 +97,7 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
     const newFormula = {
       title,
       formula: formulaText,
+      variables
     };
 
     fetchWithAuth(URLS.formulas, {
@@ -130,11 +140,8 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
 
       <h3 className="formula__preview-title">Предпросмотр</h3>
       <img src={formulaImgUrl} alt="Формула" className="edit_formula_preview" />
-      
-      {/* <div className="formula__variables">
-        <p className="formula__variables_item">x - первое слагаемое</p>
-        <p className="formula__variables_item">y - второе слагаемое</p>
-      </div> */}
+
+      <Variables variables={variables} onVariablesChange={handleVariablesChange} />
 
       <div className="formula__buttons_wrap">
         <button type="button" className="formula__cancel-btn" onClick={onCancel}>

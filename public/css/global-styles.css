@@ -5,6 +5,10 @@
 	src: url('../fonts/GrtskExa-Regular.woff2') format('woff2');
 }
 
+/* *::placeholder {
+	color: inherit;
+} */
+
 body {
 	font-family: 'Grtsk Exa';
 	font-style: normal;

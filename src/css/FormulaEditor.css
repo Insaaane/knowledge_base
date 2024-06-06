@@ -90,6 +90,37 @@
   line-height: 32px;
 }
 
+.formula__new-var {
+  display: flex;
+  align-items: center;
+}
+
+.formula__variables_item.input-var {
+  max-width: 27px;
+  border-radius: 10px;
+  background: #F6F6F6;
+  padding: 0 5px;
+}
+
+.formula__variables_item.input-text {
+  font-size: 13px;
+  line-height: 13px;
+  padding: 11px 15px;
+  width: 400px;
+  border-radius: 10px;
+  background: #F6F6F6;
+}
+
+.variables-item__wrap {
+  display: flex;
+}
+
+.variables__new-var_wrap {
+  display: flex;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
 .formula__buttons_wrap {
   display: flex;
   justify-content: space-between;

@@ -1,4 +1,4 @@
-const isProduction = true;
+const isProduction = false;
 
 const SERVER = isProduction
   ? "https://management-system-production.up.railway.app"
