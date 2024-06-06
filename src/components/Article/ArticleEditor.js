@@ -40,8 +40,6 @@ export default function ArticleEditor() {
     folderID: folderID || ''
   });
 
-  // write_only_formula_ids
-
   const URL = id ? `${URLS.articles}${id}/` : null;
 
   useEffect(() => {
@@ -116,7 +114,7 @@ export default function ArticleEditor() {
       write_only_formula_ids: prevArticle.write_only_formula_ids.filter(id => id !== formulaId)
     }));
   };
-
+  
   return (
     <form className="art-editor" onSubmit={handleSubmit}>
 

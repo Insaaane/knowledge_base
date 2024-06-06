@@ -21,6 +21,10 @@ export default function Archive() {
     .catch(error => console.error('Ошибка при получении статей:', error));
   }, []);
 
+  if (!articles.length) {
+    return <div className="loading">Loading...</div>;
+  }
+
   return (
     <div className="archive">
 

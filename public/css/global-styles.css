@@ -60,3 +60,12 @@ textarea:focus {
 	outline: none !important;
 	border: 2px solid #56595A;
 }
+
+.loading {
+	font-size: 50px;
+	text-align: center;
+	position: absolute;               
+	top: 50%;     
+	left: 50%;                
+	transform: translate(0, -50%)
+}

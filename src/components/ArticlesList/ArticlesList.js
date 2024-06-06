@@ -38,7 +38,7 @@ export default function ArticlesList() {
   }, []);
 
   if (!folderData) {
-    return <div></div>;
+    return <div className="loading">Loading...</div>;
   }
 
   return (

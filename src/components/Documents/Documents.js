@@ -53,6 +53,10 @@ export default function Documents() {
     setIsPopupVisible(false);
   };
 
+  if (!folders.length) {
+    return <div className="loading">Loading...</div>;
+  }
+
   return (
   <div className="main">
     <h1 className="main__title title">Документы</h1>

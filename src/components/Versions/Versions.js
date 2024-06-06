@@ -25,6 +25,10 @@ export default function Versions() {
     .catch(error => console.error('Ошибка получения статей:', error));
   }, []);
 
+  if (!versions.length) {
+    return <div className="loading">Loading...</div>;
+  }
+
   return (
   <div className="versions">
       

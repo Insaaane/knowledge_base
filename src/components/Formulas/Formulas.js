@@ -67,6 +67,10 @@ export default function Formulas() {
     setIsEditorOpen(false);
   };
 
+  if (!formulas.length) {
+    return <div className="loading">Loading...</div>;
+  }
+
   return (
     <div className="formula-editor">
 

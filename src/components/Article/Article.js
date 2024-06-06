@@ -59,7 +59,7 @@ export default function Article() {
   };
 
   if (!article) {
-    return <div></div>;
+    return <div className="loading">Loading...</div>;
   }
 
   return (
