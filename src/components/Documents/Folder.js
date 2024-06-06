@@ -3,7 +3,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import { URLS } from "/src/urls.js";
-import { fetchWithAuth } from "/src/auth.js";
+import { fetchWithAuth } from "../../Auth/auth.js";
 
 import Card1 from "/markup/img/regulatory-docs-img.png";
 import Card2 from "/markup/img/staff-info-img.png";

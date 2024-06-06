@@ -1,11 +1,11 @@
-import '../css/ArticleEditor.css';
+import '/src/css//ArticleEditor.css';
 import React, {useState, useEffect} from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
-import ArticleFormulas from './Article/ArticleFormulas.js';
+import ArticleFormulas from './ArticleFormulas.js';
 
-import { URLS } from '../urls.js';
-import { fetchWithAuth } from "/src/auth.js";
+import { URLS } from '/src/urls.js';
+import { fetchWithAuth } from "../../Auth/auth.js";
 
 import FileIcon from "/markup/img/file-icon.svg";
 import AddIcon from "/markup/img/add-icon.svg";
@@ -121,7 +121,8 @@ export default function ArticleEditor() {
     <form className="art-editor" onSubmit={handleSubmit}>
 
       <div className="art-editor__article">
-      <textarea 
+        <textarea 
+          required
           name="title" 
           rows="1" 
           className="art-editor__title-input" 
@@ -133,6 +134,7 @@ export default function ArticleEditor() {
         <label htmlFor="article-text" className="art-editor__article-label">Текст статьи</label>
   
         <textarea 
+          required
           name="article" 
           id="article-text" 
           className="art-editor__text-input" 
@@ -143,6 +145,7 @@ export default function ArticleEditor() {
 
         <label htmlFor="input-doc" className="art-editor__document">Документ: </label>
         <input 
+          required
           className="art-editor__add-link" 
           id="input-doc" 
           type="text" 

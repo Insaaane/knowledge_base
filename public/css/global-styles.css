@@ -43,3 +43,20 @@ main {
   justify-content: center;
   align-items: center;
 }
+
+input {
+	border: 2px solid transparent;
+}
+
+textarea {
+	border: 2px solid transparent;
+}
+
+input:focus {
+	border: 2px solid #56595A;
+}
+
+textarea:focus {
+	outline: none !important;
+	border: 2px solid #56595A;
+}

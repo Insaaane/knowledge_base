@@ -75,6 +75,14 @@
   padding: 18px 35px;
 }
 
+.main__deleted:hover {
+  background: #C7C8C8;
+}
+
+.main__deleted:active {
+  background: #9ACA3C;
+}
+
 .main__deleted-icon {
   /* background: url(./img/delete-icon.svg) no-repeat left top 2px; */
   padding-left: 32px;
@@ -141,6 +149,16 @@
   border-radius: 10px;
   border: 1px solid #D9D9D9;
   background: #FFF;
+}
+
+.new-folder__btn:hover,
+.new-folder__btn.save:hover {
+  background: #C7C8C8;
+}
+
+.new-folder__btn:active,
+.new-folder__btn.save:active {
+  background: #9ACA3C;
 }
 
 .new-folder__btn.save {

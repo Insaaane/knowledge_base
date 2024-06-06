@@ -221,3 +221,13 @@
 .art-editor__btn.save {
   background: #D9D9D9;
 }
+
+.art-editor__btn:hover,
+.art-editor__btn.save:hover {
+  background: #C7C8C8;
+}
+
+.art-editor__btn:active,
+.art-editor__btn.save:active {
+  background: #9ACA3C;
+}

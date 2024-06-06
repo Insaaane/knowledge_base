@@ -2,7 +2,7 @@ import "/src/css/Documents.css";
 import React, { useState } from "react";
 
 import { URLS } from "/src/urls.js";
-import { fetchWithAuth } from "/src/auth.js";
+import { fetchWithAuth } from "../../Auth/auth.js";
 
 import PopupBG from "/markup/img/popup-bg.png";
 import CloseIcon from "/markup/img/close-icon.svg";

@@ -2,7 +2,7 @@ import "/src/css/FormulaEditor.css";
 import React, { useState, useEffect } from 'react';
 
 import { URLS } from '/src/urls.js';
-import { fetchWithAuth } from '/src/auth.js';
+import { fetchWithAuth } from '../../Auth/auth.js';
 
 import CheckIcon from "/markup/img/check-icon.svg";
 
@@ -84,7 +84,7 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
 
   const handleSave = (evt) => {
     evt.preventDefault();
-    
+
     const newFormula = {
       title,
       formula: formulaText,
@@ -109,26 +109,27 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
   };
 
   return (
-  <form className="formula">
+    <form className="formula" onSubmit={formula ? handleUpdate : handleSave}>
       
     <div className="formula__container">
-    <input
-      className="formula__title"
-      placeholder="*Введите название формулы*"
-      value={title}
-      onChange={handleTitleChange}
-    />
-    <input
-      type="text"
-      className="formula__text"
-      placeholder="Введите формулу..."
-      value={formulaText}
-      onChange={handleInputChange}
-    />
+      <input
+        required
+        className="formula__title"
+        placeholder="*Введите название формулы*"
+        value={title}
+        onChange={handleTitleChange}
+      />
+      <input
+        required
+        type="text"
+        className="formula__text"
+        placeholder="Введите формулу..."
+        value={formulaText}
+        onChange={handleInputChange}
+      />
 
       <h3 className="formula__preview-title">Предпросмотр</h3>
-      <img src={formulaImgUrl} alt="Формула"
-        className="edit_formula_preview"/>
+      <img src={formulaImgUrl} alt="Формула" className="edit_formula_preview" />
       
       {/* <div className="formula__variables">
         <p className="formula__variables_item">x - первое слагаемое</p>
@@ -137,28 +138,27 @@ export default function FormulaEditor({ formula, onDelete, onCancel, onSave, onU
 
       <div className="formula__buttons_wrap">
         <button type="button" className="formula__cancel-btn" onClick={onCancel}>
-            Отмена
+          Отмена
         </button>
 
-        <div className='formula__save-bnt_wrap'>
+        <div className='formula__save-btn_wrap'>
           {formula && (
-          <>
-            <button type="button" className="formula__delete-btn" onClick={handleDelete}>
-              Удалить
-            </button>
-            <button type="submit" className="formula__save-btn" style={styles.checkIcon} onClick={handleUpdate}>
-              Обновить
-            </button>
-          </>
+            <>
+              <button type="button" className="formula__delete-btn" onClick={handleDelete}>
+                Удалить
+              </button>
+              <button type="submit" className="formula__save-btn" style={styles.checkIcon}>
+                Обновить
+              </button>
+            </>
           )}
-          
+
           {!formula && (
-            <button type="submit" className="formula__save-btn" style={styles.checkIcon} onClick={handleSave}>
+            <button type="submit" className="formula__save-btn" style={styles.checkIcon}>
               Сохранить
             </button>
           )}
         </div>
-        
       </div>
 
       <div className="formula__syntax_small">

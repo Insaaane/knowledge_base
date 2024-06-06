@@ -3,12 +3,14 @@ import React, {useState} from "react";
 import { useNavigate } from "react-router";
 import fullLogo from "/markup/img/full-logo.svg";
 import { URLS } from "../urls.js";
+import { useAuth } from '../Auth/AuthContext.js';
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,6 +31,7 @@ export default function Login() {
         localStorage.setItem('accessToken', data.access);
         localStorage.setItem('refreshToken', data.refresh);
 
+        login();
         navigate('/documents');
       })
       .catch(error => console.error("Error login:", error));
@@ -41,6 +44,7 @@ export default function Login() {
 
       <form className="entry__login-form" onSubmit={handleSubmit}>
         <input className="entry__login-input" 
+          required
           type="text" id="username" 
           name="username" 
           placeholder="Введите email" 
@@ -49,6 +53,7 @@ export default function Login() {
           onChange={(evt) => setUsername(evt.target.value)}
         />
         <input className="entry__login-input" 
+          required
           type="password" 
           id="password" 
           name="password" 

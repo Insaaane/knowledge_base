@@ -2,7 +2,7 @@ import '/src/css/Versions.css';
 import React, { useEffect, useState } from 'react';
 
 import { URLS } from "/src/urls.js";
-import { fetchWithAuth } from "/src/auth.js";
+import { fetchWithAuth } from "../../Auth/auth.js";
 import { useParams } from 'react-router-dom';
 
 import VersionsItem from "./VersionsItem.js";

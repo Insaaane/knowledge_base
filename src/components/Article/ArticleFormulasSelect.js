@@ -2,7 +2,7 @@ import '/src/css/ArticleEditor.css';
 import React, { useState, useEffect } from 'react';
 
 import { URLS } from '../../urls';
-import { fetchWithAuth } from "/src/auth.js";
+import { fetchWithAuth } from "../../Auth/auth.js";
 
 import SelectIcon from "/markup/img/select-btn-icon.svg";
 

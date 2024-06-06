@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
 import { URLS } from "/src/urls.js";
-import { fetchWithAuth } from "/src/auth.js";
+import { fetchWithAuth } from "../../Auth/auth.js";
 import { formatDate } from '/src/util.js';
 
 import ArticleFormulas from './ArticleFormulas.js';

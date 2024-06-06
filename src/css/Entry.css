@@ -47,3 +47,11 @@
 
   margin: 0 auto;
 }
+
+.entry__login-btn:hover {
+  background: #C7C8C8;
+}
+
+.entry__login-btn:active {
+  background: #9ACA3C;
+}

@@ -28,6 +28,7 @@
 .sidenav__account {
   margin-top: auto;
   text-align: center;
+  cursor: pointer;
 }
 
 .sidenav__account-icon {

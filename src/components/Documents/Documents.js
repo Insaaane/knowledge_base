@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { URLS } from "/src/urls.js";
-import { fetchWithAuth } from "/src/auth.js";
+import { fetchWithAuth } from "../../Auth/auth.js";
 
 import Folder from "./Folder.js";
 import NewFolderPopup from "./NewFolderPopup.js";

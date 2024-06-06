@@ -7,7 +7,7 @@ import Article from './Article/Article.js';
 import ArticlesList from './ArticlesList/ArticlesList.js';
 import Versions from './Versions/Versions.js';
 import Archive from './Archive/Archive.js';
-import ArticleEditor from './ArticleEditor.js';
+import ArticleEditor from './Article/ArticleEditor.js';
 import Formulas from './Formulas/Formulas.js';
 
 export default function Main() {

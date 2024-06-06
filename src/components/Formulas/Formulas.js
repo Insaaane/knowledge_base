@@ -5,7 +5,7 @@ import FormulaItem from './FormulaItem.js';
 import FormulaEditor from './FormulaEditor.js';
 
 import { URLS } from "/src/urls.js";
-import { fetchWithAuth } from "/src/auth.js";
+import { fetchWithAuth } from "../../Auth/auth.js";
 
 import SearchIcon from "/markup/img/search-icon.svg";
 import AddIcon from "/markup/img/add-icon.svg";
@@ -100,6 +100,7 @@ export default function Formulas() {
           onCancel={handleCancel}
           onSave={handleSaveFormula}
           onUpdate={handleUpdateFormula}
+          isArticleEditing={false}
         />}
     </div>
   )
