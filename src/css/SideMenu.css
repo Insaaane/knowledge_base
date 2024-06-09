@@ -28,12 +28,12 @@
 .sidenav__account {
   margin-top: auto;
   text-align: center;
-  cursor: pointer;
 }
 
 .sidenav__account-icon {
   width: 28px;
   height: 28px;
+  cursor: pointer;
 }
 
 .sidenav__account-btn_wrap {

@@ -1,33 +1,54 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { URLS } from '../urls';
+import { fetchWithAuth } from './auth';
 
 const AuthContext = createContext();
 
+export const useAuth = () => useContext(AuthContext);
+
 export const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('accessToken'));
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const accessToken = localStorage.getItem('accessToken');
-    const refreshToken = localStorage.getItem('refreshToken');
-    if (accessToken && refreshToken) {
-      setIsLoggedIn(true);
+    if (isLoggedIn && !user) {
+      fetchWithAuth(URLS.profile)
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Failed to fetch user data');
+        })
+        .then(userData => {
+          setUser(userData);
+          localStorage.setItem('role', userData.role);
+        })
+        .catch(error => {
+          console.error('Error fetching user data:', error);
+        });
     }
-  }, []);
+  }, [isLoggedIn, user]);
 
-  const login = () => {
+  const login = (userData) => {
     setIsLoggedIn(true);
+    setUser(userData);
+    localStorage.setItem('role', userData.role);
   };
 
   const logout = () => {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
+    localStorage.removeItem('role');
     setIsLoggedIn(false);
+    setUser(null);
+    navigate('/');
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
-
-export const useAuth = () => useContext(AuthContext);

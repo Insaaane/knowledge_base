@@ -1,4 +1,4 @@
-const isProduction = true;
+const isProduction = false;
 
 const SERVER = isProduction
   ? "https://management-system-production.up.railway.app"
@@ -6,6 +6,7 @@ const SERVER = isProduction
 
 const URLS = {
   login: `${SERVER}/api/login/token/`,
+  profile: `${SERVER}/api/me/profile/`,
   refresh: `${SERVER}/api/login/token-refresh/`,
   articles: `${SERVER}/api/articles/`, // иногда + id_folder
   archive: `${SERVER}/api/archive-articles/`,
