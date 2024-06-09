@@ -1,5 +1,5 @@
 import "/src/css/Documents.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 
 import { Link } from "react-router-dom";
 import { URLS } from "/src/urls.js";
@@ -7,6 +7,7 @@ import { fetchWithAuth } from "../../Auth/auth.js";
 
 import Folder from "./Folder.js";
 import NewFolderPopup from "./NewFolderPopup.js";
+import ArticleItem from "../ArticlesList/ArticleItem.js";
 
 import SearchIcon from "/markup/img/search-icon.svg";
 import DeleteIcon from "/markup/img/archive-icon.svg";
@@ -24,6 +25,10 @@ const styles = {
 export default function Documents() {
   const [folders, setFolders] = useState([]);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [articles, setArticles] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
 
   useEffect(() => {
     fetchWithAuth(URLS.folders)
@@ -53,16 +58,31 @@ export default function Documents() {
     setIsPopupVisible(false);
   };
 
-  if (!folders.length) {
-    return <div className="loading">Loading...</div>;
-  }
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    fetchWithAuth(`${URLS.search}${searchQuery}/`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setArticles(data);
+        setIsSearching(true);
+      })
+      .catch(error => console.error('Ошибка поиска:', error));
+  };
 
-  return (
-  <div className="main">
-    <h1 className="main__title title">Документы</h1>
-    <input className="main__search" type="text" placeholder="Поиск" style={styles.searchIcon} />
+  const handleResetSearch = () => {
+    setSearchQuery("");
+    setArticles([]);
+    setIsSearching(false);
+  };
 
-    <div className="main__cards">
+  const memoizedFolders = useMemo(() => {
+    return (
+    <>
       {folders.map(folder => (
         <Folder key={folder.id} folder={folder} onDelete={handleDeleteFolder}/>
       ))}
@@ -71,6 +91,41 @@ export default function Documents() {
         <img className="main__card-img" src={NewFolderImg} alt="Добавить папку"/>
         <h2 className="main__card-title">Новая категория документов</h2>
       </div>
+    </>
+    );
+  }, [folders]);
+
+  const memoizedArticles = useMemo(() => {
+    return articles.map(article => (
+      <ArticleItem key={article.id} article={article} />
+    ));
+  }, [articles]);
+
+  if (!folders.length && !isSearching) {
+    return <div className="loading">Loading...</div>;
+  }
+
+  return (
+  <div className="main">
+    <h1 className="main__title title">Документы</h1>
+    <form onSubmit={handleSearchSubmit}> 
+      <input
+        className="main__search"
+        type="text"
+        placeholder="Поиск"
+        style={styles.searchIcon}
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        required
+      />
+      <button type="submit" className="main__search-btn search">Найти</button>
+      <button type="reset" className="main__search-btn" onClick={handleResetSearch}>Отменить поиск</button>
+    </form>
+
+    <div className="main__cards">
+        
+      {isSearching ? memoizedArticles : memoizedFolders}
+  
     </div>
 
     <div className="main__deleted-wrap">

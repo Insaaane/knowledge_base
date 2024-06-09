@@ -21,8 +21,7 @@ export default function CommentsItem() {
         </div>
       </div>
       <div className='article__comment_options-wrap'>
-          <img className='artilce__comment-edit-btn' src={EditIcon} alt='Редактировать' />
-          <img className='artilce__comment-delete-btn' src={DeleteIcon} alt='Редактировать' />
+          <img className='artilce__comment-delete-btn' src={DeleteIcon} alt='Удалить' />
       </div>
     </li>
   )

@@ -9,6 +9,7 @@ const URLS = {
   profile: `${SERVER}/api/me/profile/`,
   refresh: `${SERVER}/api/login/token-refresh/`,
   articles: `${SERVER}/api/articles/`, // иногда + id_folder
+  search: `${SERVER}/api/search/`, // + текст
   archive: `${SERVER}/api/archive-articles/`,
   versions: `${SERVER}/api/past-articles/`, // + version_id
   folders: `${SERVER}/api/folders/`, // иногда + id_folder

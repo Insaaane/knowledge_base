@@ -37,6 +37,10 @@
   gap: 40px;
 }
 
+.art-list__item {
+  list-style-type: none; 
+}
+
 .art-list__info_label {
   font-weight: 600;
   font-size: 24px;

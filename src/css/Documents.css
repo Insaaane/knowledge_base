@@ -1,5 +1,6 @@
 .main {
   padding: 64px 65px 67px 80px;
+  
 }
 
 .main__title {
@@ -22,6 +23,26 @@
 
 .main__search::placeholder {
   color: #14191A;
+}
+
+.main__search-btn {
+  border-radius: 10px;
+  border: 1px solid #D9D9D9;
+  background: #FFF;
+  padding: 5px 15px;
+  margin-left: 20px;
+}
+
+.main__search-btn.search {
+  background: #D9D9D9;
+}
+
+.main__search-btn:hover {
+  background: #C7C8C8;
+}
+
+.main__search-btn:active {
+  background: #9ACA3C;
 }
 
 .main__cards {
