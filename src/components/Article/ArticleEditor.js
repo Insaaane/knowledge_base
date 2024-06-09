@@ -7,22 +7,6 @@ import ArticleFormulas from './ArticleFormulas.js';
 import { URLS } from '/src/urls.js';
 import { fetchWithAuth } from "../../Auth/auth.js";
 
-import FileIcon from "/markup/img/file-icon.svg";
-import AddIcon from "/markup/img/add-icon.svg";
-import SelectIcon from "/markup/img/select-btn-icon.svg";
-
-const styles = {
-  fileIcon: {
-    background: `url(${FileIcon}) no-repeat right center`
-  },
-  addIcon: {
-    background: `url(${AddIcon}) no-repeat left 6px`
-  },
-  selectIcon: {
-    backgroundImage: `url(${SelectIcon})`
-  }
-};
-
 export default function ArticleEditor() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -54,7 +38,8 @@ export default function ArticleEditor() {
       .then(data => setArticle(prevArticle => ({
         ...prevArticle,
         ...data,
-        write_only_formula_ids: data.formula_ids.map(formula => formula.id)
+        write_only_formula_ids: data.formula_ids.map(formula => formula.id),
+        changed: ''
       })))
       .catch(error => console.error("Error fetching article:", error));
     }
@@ -220,6 +205,7 @@ export default function ArticleEditor() {
           className="art-editor__changes-input" 
           placeholder="Введите описание тех изменений, которые вы внесли в этой версии"
           onChange={handleChange}
+          value={article.changed || ''}
         />
       </div>}
 

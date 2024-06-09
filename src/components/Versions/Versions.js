@@ -7,6 +7,10 @@ import { useParams } from 'react-router-dom';
 
 import VersionsItem from "./VersionsItem.js";
 
+function sortVersions(data) {
+  return data.sort((a, b) => new Date(a.creation_date) - new Date(b.creation_date));
+}
+
 export default function Versions() {
   const [versions, setVersions] = useState([]);
   const { id } = useParams();
@@ -21,7 +25,9 @@ export default function Versions() {
       }
       return response.json();
     })
-    .then(data => setVersions(data))
+    .then(data => {
+      setVersions(sortVersions(data));
+    })
     .catch(error => console.error('Ошибка получения статей:', error));
   }, []);
 
