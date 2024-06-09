@@ -21,6 +21,18 @@ export default function Archive() {
     .catch(error => console.error('Ошибка при получении статей:', error));
   }, []);
 
+  const handleRefreshArticles = () => {
+    fetchWithAuth(URLS.archive)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => setArticles(data))
+    .catch(error => console.error('Ошибка при получении статей:', error));
+  };  
+
   if (!articles.length) {
     return <div className="loading">Loading...</div>;
   }
@@ -35,9 +47,11 @@ export default function Archive() {
         {articles.map(article => (
           <ArchiveArticle
             key={article.id}
+            articleID={article.id}
             title={article.title}
-            author={article.authorID}
+            author={article.author}
             date={article.creation_date}
+            onRestoreSuccess={handleRefreshArticles}
           />
         ))}
 

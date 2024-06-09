@@ -1,5 +1,5 @@
 const isProduction = true;
-
+f
 const SERVER = isProduction
   ? "https://management-system-production.up.railway.app"
   : "http://127.0.0.1:8000"; 
@@ -7,6 +7,7 @@ const SERVER = isProduction
 const URLS = {
   login: `${SERVER}/api/login/token/`,
   profile: `${SERVER}/api/me/profile/`,
+  restore: `${SERVER}/api/restore-article/`, // + article_id post
   refresh: `${SERVER}/api/login/token-refresh/`,
   articles: `${SERVER}/api/articles/`, // иногда + id_folder
   search: `${SERVER}/api/search/`, // + текст
