@@ -69,7 +69,7 @@ export default function ArchivePopup({ articleID, onClose, onRestoreSuccess }) {
 
 				<div className="new-folder__buttons-wrap">
 					<button className="new-folder__btn reset" onClick={onClose}>Отмена</button>
-					<button type="submit" className="new-folder__btn save">Восстановить</button>
+					<button type="submit" className="new-folder__btn save restore">Восстановить</button>
 				</div>
 			</form>
     </div>
