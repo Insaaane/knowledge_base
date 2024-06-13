@@ -16,6 +16,8 @@ const URLS = {
   folders: `${SERVER}/api/folders/`, // иногда + id_folder
   formulas: `${SERVER}/api/formula/`, // иногда + id_formula
   formulaImg: `https://latex.codecogs.com/svg.image?\\LARGE&space;`,
+  employees: `${SERVER}/api/employee-profiles/`,
+  newEmployee: `${SERVER}/admin/backend_drf/account/add/`
 }
 
 export {URLS};

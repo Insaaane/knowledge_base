@@ -26,6 +26,8 @@ export default function ArticleEditor() {
 
   const URL = id ? `${URLS.articles}${id}/` : null;
 
+  const role = localStorage.getItem('role');
+
   useEffect(() => {
     if (id) {
       fetchWithAuth(URL)
@@ -153,25 +155,37 @@ export default function ArticleEditor() {
           <ul className='art-editor__checkboxes-wrap'>
             <li className='art-editor__checkbox_label-wrap'>
               <input type="checkbox" id='role-1' name="role" value="AD"
-                checked={article.access.includes('AD')} onChange={handleChange}/>
+                checked={article.access.includes('AD') || role === 'AD'} 
+                onChange={handleChange}
+                readOnly={role === 'AD'}
+              />
               <label className="art-editor__checkbox_label" htmlFor="role-1"> Руководитель</label>
             </li>
             
             <li className='art-editor__checkbox_label-wrap'>
               <input type="checkbox" id='role-2' name="role" value="DI"
-                checked={article.access.includes('DI')} onChange={handleChange}/>
+                checked={article.access.includes('DI') || role === 'DI'} 
+                onChange={handleChange}
+                readOnly={role === 'DI'}
+              />
               <label className="art-editor__checkbox_label" htmlFor="role-2"> Директор</label>
             </li>
 
             <li className='art-editor__checkbox_label-wrap'>
               <input type="checkbox" id='role-3' name="role" value="AC"
-                checked={article.access.includes('AC')} onChange={handleChange}/>
+                checked={article.access.includes('AC') || role === 'AC'} 
+                onChange={handleChange}
+                readOnly={role === 'AC'}
+              />
               <label className="art-editor__checkbox_label" htmlFor="role-3"> Бухгалтер</label>
             </li>
 
             <li className='art-editor__checkbox_label-wrap'>
               <input type="checkbox" id='role-4' name="role" value="AR"
-                checked={article.access.includes('AR')} onChange={handleChange}/>
+                checked={article.access.includes('AR') || role === 'AR'} 
+                onChange={handleChange}
+                readOnly={role === 'AR'}
+              />
               <label className="art-editor__checkbox_label" htmlFor="role-4"> Архитектор</label>
             </li>
           </ul>
@@ -179,19 +193,28 @@ export default function ArticleEditor() {
           <ul className='art-editor__checkboxes-wrap'>
             <li className='art-editor__checkbox_label-wrap'>
               <input type="checkbox" id='role-5' name="role" value="CE"
-                checked={article.access.includes('CE')} onChange={handleChange}/>
+                checked={article.access.includes('CE') || role === 'CE'}
+                onChange={handleChange}
+                readOnly={role === 'CE'}
+              />
               <label className="art-editor__checkbox_label" htmlFor="role-5"> Инженер-строитель</label>
             </li>
             
             <li className='art-editor__checkbox_label-wrap'>
               <input type="checkbox" id='role-6' name="role" value="LA"
-                checked={article.access.includes('LA')} onChange={handleChange}/>
+                checked={article.access.includes('LA') || role === 'LA'} 
+                onChange={handleChange}
+                readOnly={role === 'LA'}
+              />
               <label className="art-editor__checkbox_label" htmlFor="role-6"> Юрист</label>
             </li>
 
             <li className='art-editor__checkbox_label-wrap'>
               <input type="checkbox" id='role-7' name="role" value="PL"
-                checked={article.access.includes('PL')} onChange={handleChange}/>
+                checked={article.access.includes('PL') || role === 'PL'} 
+                onChange={handleChange}
+                readOnly={role === 'PL'}
+              />
               <label className="art-editor__checkbox_label" htmlFor="role-7"> Проектировщик</label>
             </li>
           </ul>

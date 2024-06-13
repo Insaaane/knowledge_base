@@ -9,6 +9,7 @@ import Versions from './Versions/Versions.js';
 import Archive from './Archive/Archive.js';
 import ArticleEditor from './Article/ArticleEditor.js';
 import Formulas from './Formulas/Formulas.js';
+import Employees from './Employees/Employees.js';
 
 export default function Main() {
   return (
@@ -23,6 +24,7 @@ export default function Main() {
       <Route path='/article-editor' element={<ArticleEditor/>}/>
       <Route path='/article-editor/:id' element={<ArticleEditor/>}/>
       <Route path='/formulas' element={<Formulas/>}/>
+      <Route path='/employees' element={<Employees/>}/>
     </Routes>
 	</main>
   )

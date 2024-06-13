@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import { URLS } from '/src/urls.js';
 import { fetchWithAuth } from '../../Auth/auth.js';
+// import ArchivePopup from './ArchivePopup.js';
 
 import ArchiveArticle from './ArchiveArticle.js';
 
@@ -56,6 +57,8 @@ export default function Archive() {
         ))}
 
       </ul>
+
+      {/* <ArchivePopup/> */}
 
     </div>
   )
