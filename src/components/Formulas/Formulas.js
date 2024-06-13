@@ -75,7 +75,6 @@ export default function Formulas() {
     <div className="formula-editor">
 
       <h1 className="formula-editor__title title">Конструктор формул</h1>
-      <input className="main__search formulas__search" type="text" style={styles.searchIcon} placeholder="Поиск"/>
 
       <h2 className="formula-editor__all-formulas_title">
         Все фомулы (<span className="formula-editor__formulas-count">{formulas.length}</span>)
