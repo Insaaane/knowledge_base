@@ -3,12 +3,14 @@ import React, { useEffect, useState } from 'react';
 
 import { URLS } from '/src/urls.js';
 import { fetchWithAuth } from '../../Auth/auth.js';
-// import ArchivePopup from './ArchivePopup.js';
+import ArchivePopup from './ArchivePopup.js';
 
 import ArchiveArticle from './ArchiveArticle.js';
 
 export default function Archive() {
   const [articles, setArticles] = useState([]);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [currentArticleID, setCurrentArticleID] = useState(null);
 
   useEffect(() => {
     fetchWithAuth(URLS.archive)
@@ -34,6 +36,15 @@ export default function Archive() {
     .catch(error => console.error('Ошибка при получении статей:', error));
   };  
 
+  const handleShowPopup = (articleID) => {
+    setCurrentArticleID(articleID);
+    setIsPopupVisible(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupVisible(false);
+  };
+
   if (!articles.length) {
     return <div className="loading">Loading...</div>;
   }
@@ -52,14 +63,22 @@ export default function Archive() {
             title={article.title}
             author={article.author}
             date={article.creation_date}
-            onRestoreSuccess={handleRefreshArticles}
+            onShowPopup={handleShowPopup}
           />
         ))}
 
       </ul>
 
-      {/* <ArchivePopup/> */}
-
+      {isPopupVisible && 
+        <ArchivePopup 
+          articleID={currentArticleID} 
+          onClose={handleClosePopup} 
+          onRestoreSuccess={() => {
+            handleRefreshArticles();
+            handleClosePopup();
+          }} 
+        />
+      }
     </div>
   )
 }

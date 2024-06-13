@@ -153,8 +153,15 @@
 .new-folder__input {
   width: 500px;
   padding: 16px 30px;
-  background: #F6F6F6;
+  background-color  : #F6F6F6;
   border-radius: 14px;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
 }
 
 .new-folder__buttons-wrap {

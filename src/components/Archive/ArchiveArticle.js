@@ -2,8 +2,6 @@ import '/src/css/Archive.css';
 import React from 'react';
 
 import { formatDate } from '/src/util.js';
-import { fetchWithAuth } from '../../Auth/auth.js';
-import { URLS } from '../../urls.js';
 
 import VersionPointIcon from '/markup/img/version-point-icon.svg';
 import RestoreIcon from '/markup/img/restore-icon.svg';
@@ -18,27 +16,9 @@ const styles = {
   }
 };
 
-export default function ArchiveArticle({ articleID, title, author, date, onRestoreSuccess  }) {
-  const handleRestore = () => {
-    const url = `${URLS.restore}${articleID}/`;
-    const body = { folderID: 1 };
-  
-    fetchWithAuth(url, {
-      method: 'POST',
-      body: JSON.stringify(body),
-    })
-    .then(response => {
-      if (!response.ok) {
-        if (response.status === 403) {
-          alert('У вас нет доступа к этой статье.'); 
-        } else {
-          throw new Error('Network response was not ok');
-        }
-      } else {
-        onRestoreSuccess();
-      }
-    })
-    .catch(error => console.error('Error restoring article:', error));
+export default function ArchiveArticle({ articleID, title, author, date, onShowPopup  }) {
+  const handleRestoreClick = () => {
+    onShowPopup(articleID);
   };
 
   return (
@@ -52,7 +32,8 @@ export default function ArchiveArticle({ articleID, title, author, date, onResto
       </div>
     </div>
   
-    <button className="archive__restore-btn" style={styles.restoreIcon} onClick={handleRestore}>Восстановить</button>
+    <button className="archive__restore-btn" style={styles.restoreIcon} onClick={handleRestoreClick}>Восстановить</button>
+
   </li>
   )
 }
