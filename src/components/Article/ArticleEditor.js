@@ -13,20 +13,20 @@ export default function ArticleEditor() {
   const { state } = useLocation();
   const folderID = state?.folderID || null;
 
+  const role = localStorage.getItem('role');
+
   const [article, setArticle] = useState({
     title: "",
     article: "",
     material_link: "",
     formula_ids: [],
     write_only_formula_ids: [],
-    access: [],
+    access: [role],
     changed: "",
     folderID: folderID || ''
   });
 
   const URL = id ? `${URLS.articles}${id}/` : null;
-
-  const role = localStorage.getItem('role');
 
   useEffect(() => {
     if (id) {
@@ -41,6 +41,7 @@ export default function ArticleEditor() {
         ...prevArticle,
         ...data,
         write_only_formula_ids: data.formula_ids.map(formula => formula.id),
+        access: [...new Set([...data.access, role])],
         changed: ''
       })))
       .catch(error => console.error("Error fetching article:", error));
@@ -54,7 +55,7 @@ export default function ArticleEditor() {
         const updatedAccessRoles = checked
           ? [...prevArticle.access, value]
           : prevArticle.access.filter(role => role !== value);
-        return { ...prevArticle, access: updatedAccessRoles };
+        return { ...prevArticle, access: [...new Set([...updatedAccessRoles, role])] };
       });
     } else {
       setArticle({ ...article, [name]: value });
@@ -65,27 +66,28 @@ export default function ArticleEditor() {
     evt.preventDefault();
     const method = id ? 'PUT' : 'POST';
     const requestURL = id ? URL : URLS.articles;
-
+  
     const dataToSend = {
       ...article,
-      write_only_formula_ids: article.write_only_formula_ids
+      write_only_formula_ids: article.write_only_formula_ids,
+      access: [...new Set([...article.access, role])] 
     };
     delete dataToSend.formula_ids;
-
+  
     fetchWithAuth(requestURL, {
       method,
-      body: JSON.stringify(article)
+      body: JSON.stringify(dataToSend) 
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Ошибка при сохранении статьи');
-      }
-      return response.json();
-    })
-    .then(() => navigate(-1))
-    .catch(error => console.error("Error saving article:", error));
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Ошибка при сохранении статьи');
+        }
+        return response.json();
+      })
+      .then(() => navigate(-1))
+      .catch(error => console.error("Error saving article:", error));
   };
-
+  
   const handleAddFormula = (newFormula) => {
     setArticle(prevArticle => ({
       ...prevArticle,
