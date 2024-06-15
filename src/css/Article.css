@@ -151,6 +151,8 @@
 .article__comment_text {
   font-size: 18px;
   line-height: 32px;
+
+  white-space: pre-wrap;
 }
 
 .article__comment_options-wrap {

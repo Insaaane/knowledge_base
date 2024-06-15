@@ -11,4 +11,8 @@ function formatDateTime(isoString) {
   return format(date, 'dd.MM.yyyy hh:mm', { locale: ru });
 }
 
+export function sortByDate(data) {
+  return data.sort((a, b) => new Date(b.start_datetime) - new Date(a.start_datetime));
+}
+
 export { formatDate, formatDateTime };

@@ -13,6 +13,10 @@ const styles = {
   }
 };
 
+function sortByDate(data) {
+  return data.sort((a, b) => new Date(b.creation_date) - new Date(a.creation_date));
+}
+
 export default function Comments({ articleID }) {
   const [comments, setComments] = useState(null);
   const [newComment, setNewComment] = useState("");
@@ -81,7 +85,7 @@ export default function Comments({ articleID }) {
 
       <ul className="article__comments_list">
 
-        {comments && comments.map(comment => (
+        {comments && sortByDate(comments).map(comment => (
           <CommentsItem 
             key={comment.id} 
             comment={comment}
