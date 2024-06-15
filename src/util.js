@@ -8,7 +8,7 @@ function formatDate(isoString) {
 
 function formatDateTime(isoString) {
   const date = new Date(isoString);
-  return format(date, 'dd.MM.yyyy hh:mm', { locale: ru });
+  return format(date, 'dd.MM.yyyy HH:mm', { locale: ru });
 }
 
 export function sortByDate(data) {
