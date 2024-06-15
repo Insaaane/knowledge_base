@@ -6,4 +6,9 @@ function formatDate(isoString) {
   return format(date, 'dd MMMM yyyy', { locale: ru });
 }
 
-export { formatDate };
+function formatDateTime(isoString) {
+  const date = new Date(isoString);
+  return format(date, 'dd.MM.yyyy hh:mm', { locale: ru });
+}
+
+export { formatDate, formatDateTime };

@@ -157,6 +157,10 @@
   margin-top: 10px;
 }
 
+.article__comment-delete-btn {
+  cursor: pointer;
+}
+
 .artilce__comment-edit-btn {
   margin-right: 8px;
 }

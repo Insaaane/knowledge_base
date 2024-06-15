@@ -85,7 +85,7 @@ export default function Article() {
 
       <ArticleFormulas showButtons={false} formulas={article.formula_ids}/>
 
-      <Comments/>
+      <Comments articleID={article.id}/>
 
     </div>
   )

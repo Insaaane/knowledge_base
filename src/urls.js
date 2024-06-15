@@ -17,7 +17,9 @@ const URLS = {
   formulas: `${SERVER}/api/formula/`, // иногда + id_formula
   formulaImg: `https://latex.codecogs.com/svg.image?\\LARGE&space;`,
   employees: `${SERVER}/api/employee-profiles/`,
-  newEmployee: `${SERVER}/admin/backend_drf/account/add/`
+  newEmployee: `${SERVER}/admin/backend_drf/account/add/`,
+  comments: `${SERVER}/articles/`, // <int:article_id>/comments/
+  comments_delete: `${SERVER}/comments/`, // <int:comment_id>/
 }
 
 export {URLS};
