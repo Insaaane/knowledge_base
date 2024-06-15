@@ -13,7 +13,7 @@ const styles = {
 };
 
 function Changes({ changes }) {
-  if (changes == null) {
+  if (!changes) {
     return
   }
 
