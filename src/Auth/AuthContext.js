@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
         .then(userData => {
           setUser(userData);
           localStorage.setItem('role', userData.role);
+          localStorage.setItem('userID', userData.id);
         })
         .catch(error => {
           console.error('Error fetching user data:', error);
@@ -35,12 +36,14 @@ export const AuthProvider = ({ children }) => {
     setIsLoggedIn(true);
     setUser(userData);
     localStorage.setItem('role', userData.role);
+    localStorage.setItem('userID', userData.id);
   };
 
   const logout = () => {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
     localStorage.removeItem('role');
+    localStorage.removeItem('userID');
     setIsLoggedIn(false);
     setUser(null);
     navigate('/');

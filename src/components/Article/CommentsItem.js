@@ -17,14 +17,16 @@ export default function CommentsItem({ comment, onDelete }) {
           <p className="article__comment_text">{comment.content}</p>
         </div>
       </div>
-      <div className='article__comment_options-wrap'>
-        <img 
-          className='article__comment-delete-btn' 
-          src={DeleteIcon} 
-          alt='Удалить' 
-          onClick={() => onDelete(comment.id)}
-        />
-      </div>
+      {localStorage.getItem('userID') == comment.userID && (
+        <div className='article__comment_options-wrap'>
+          <img 
+            className='article__comment-delete-btn' 
+            src={DeleteIcon} 
+            alt='Удалить' 
+            onClick={() => onDelete(comment.id)}
+          />
+        </div>
+      )}
     </li>
   )
 }
